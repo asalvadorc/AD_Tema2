@@ -43,8 +43,8 @@ Com veieu el **BufferedReader** sí que ens ofereix la possibilitat de llegir u
 
 **PrintWriter**
 
-- mètodes **print(*qualsevol\_tipus*)** , que permeten imprimir una dada de qualsevol tipus: booleà, char, tots els numèrics, string, ... Serà segurament el que més utilitzarem.
-- mètodes **println(*qualsevol\_tipus*)** , a banda de tot el de **print**, baixen de línia
+- mètodes **print(*qualsevol_tipus*)** , que permeten imprimir una dada de qualsevol tipus: booleà, char, tots els numèrics, string, ... Serà segurament el que més utilitzarem.
+- mètodes **println(*qualsevol_tipus*)** , a banda de tot el de **print**, baixen de línia
 - mètode **printf()** , que permet donar un format
 
 Veiem un senzill exemple per a copiar el contingut d'un fitxer de text i modificar-lo lleugerament. El més còmode serà anar línia a línia. Per tant utilitzarem el **BufferedReader** per a llegir línies, i el **PrintWriter** per a escriure línies. La lleugera modificació consistirà en posar el número de línia davant. Copieu el següent codi en un fitxer anomenat **Exemple_2_51.kt** :

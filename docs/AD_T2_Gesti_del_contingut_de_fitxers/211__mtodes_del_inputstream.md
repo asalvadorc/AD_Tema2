@@ -30,23 +30,21 @@ fun main(args: Array<String>){
 }
 ```
 El resultat en Ubuntu serà aquest:
-~~~
+```java
 H
 o
 l
 a
 ,
-
 q
 u
 Ã
 ¨
-
 t
 a
 l
 ?
-~~~
+```
 Potser en Windows si que apareguen bé tots els caràcters, ja que utilitza per defecte una altra codificació. Però no li donarem ara importància al fet que no apareguen bé els caràcters especials. Observeu com estem utilitzant un **InputStream**, concretament un **FileInputStream**, per a llegir un fitxer de text. Açò no és el més apropiat, com ja havíem comentat abans, sinó que hauríem d'utilitzar algun flux orientat a caràcters, i no orientat a bytes. El programa funcionarà si utilitzem codificació ASCII (o ISO-8859) ja que cada caràcter es guarda en un byte. Si ens despistem i el fitxer el gaurdem en UTF-8, no eixiran bé els caràcters com ç, ñ o vocals accentuades (que es guarden en 2 bytes). I si el guardem en UTF-16, encara eixirà pitjor.
 
 Hem utilitzat el constructor que accepta un String com a paràmetre. Queda més curt, però seria totalment equivalent substituir la construcció anterior per aquestes dues línies
@@ -78,7 +76,7 @@ fun main(args: Array<String>) {
 ```
 Una altra vegada els caràcters especial eixiran malament, ja que en compte de un  **InputStream** (en aquest cas **ByteArrayInputStream**) el més adequat seria un flux orientat a caràcters, però com a exemple sí que ens val.
 
-Mirem un tercer exemple, per veure el **SequenceInputStream**, on es poden enganxar de forma sequencial diferents InputStream. Després d'aquest exemple ja ens centrarem en els fitxers, que és el que ens interessa. Copieu-lo en un fitxer anomenat **Exemple\_2\_03.kt** :
+Mirem un tercer exemple, per veure el **SequenceInputStream**, on es poden enganxar de forma sequencial diferents InputStream. Després d'aquest exemple ja ens centrarem en els fitxers, que és el que ens interessa. Copieu-lo en un fitxer anomenat **Exemple_2_03.kt** :
 ```java
 package exemples
 

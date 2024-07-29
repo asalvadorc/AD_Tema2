@@ -9,7 +9,7 @@ Tanmateix, Kotlin proporcionarà funcionalitat extra en les classes, que ens per
 - **writeBytes(*array*: ByteArray)** : escriu en el fitxer el contingut del ByteArray. Si el fitxer ja existia, el sobreescriura.
 - **appendBytes(*array*: ByteArray)** : afegeix al final del fitxer els bytes del ByteArray.
 
-Tornem a fer el primer exemple, Exemple\_2\_01.kt, utilitzant aquesta funcionalitat extra. Copieu el següent com **Exemple\_2\_01\_bis.kt**:
+Tornem a fer el primer exemple, Exemple_2_01.kt, utilitzant aquesta funcionalitat extra. Copieu el següent com **Exemple_2_01_bis.kt**:
 
 ```java
 package exemples
@@ -25,7 +25,7 @@ fun main(){
     }
 }
 ```
-I com a exemple d'escriptura, podem fer Exemple\_2\_11.kt,on ho podem fer tot en una línia. Copieu el següent com **Exemple\_2\_11\_bis.kt**:
+I com a exemple d'escriptura, podem fer Exemple_2_11.kt,on ho podem fer tot en una línia. Copieu el següent com **Exemple_2_11_bis.kt**:
 
 ```java
 package exemples
@@ -47,7 +47,7 @@ Recordeu que en els dos exemples anteriors per comoditat estem utilitzant caràc
 - **writeText(*text*: String, *charset*: CharSet)**: escriu el string en el fitxer. Si el fitxer ja existia el sobreescriurà. Opcionalment podem posar el joc de caràcters que volem utilitzar. Si no el posem utilitzarà UTF-8. Observeu que ja disposàvem d'un mètode que escrivia tot un String anteriorment, per tant no és una gran millora, excepte pel fet de poder especificar el joc de caràcters. Açò sí que és de gran comoditat.
 - **appendText(*text*: String, *charset*: CharSet)**: el mateix que l'anterior, però afegint al final.
 
-Com a exemple anem a veure Exemple\_2\_21.kt. Copieu el següent com **Exemple\_2\_21\_bis.kt**:
+Com a exemple anem a veure Exemple_2_21.kt. Copieu el següent com **Exemple_2_21_bis.kt**:
 ```java
 package exemples
 
@@ -61,7 +61,7 @@ fun main(){
     }
 }
 ```
-I com a exemple d'escriptura, l'adaptació de Exemple\_2\_31.kt. Copieu el següent com **Exemple\_2\_31\_bis.kt**:
+I com a exemple d'escriptura, l'adaptació de Exemple_2_31.kt. Copieu el següent com **Exemple_2_31_bis.kt**:
 
 ```java
 package exemples
@@ -74,7 +74,7 @@ fun main() {
     File("f5.txt").writeText(text)
 }
 ```
-I com a exemple de copiar un fitxer en un altre, fins i tot canviant el joc de caràcters, farem una altra versió del Exemple\_2\_61.kt. Copieu el següent com **Exemple\_2\_61\_bis.kt**:
+I com a exemple de copiar un fitxer en un altre, fins i tot canviant el joc de caràcters, farem una altra versió del Exemple_2_61.kt. Copieu el següent com **Exemple_2_61_bis.kt**:
 
 ```java
 package exemples
@@ -83,7 +83,7 @@ import java.io.File
 
 fun main() {
 
-    File("f5\_2.txt").writeText(File("f5.txt").readText(), Charsets.ISO\_8859\_1)
+    File("f5_2.txt").writeText(File("f5.txt").readText(), Charsets.ISO_8859_1)
 }
 ```
  <span style="color: blue;">Mètodes de conversió</span>
@@ -97,7 +97,7 @@ En ocasions és possible que no tinguem un mètode directament en File que ens v
 - **bufferedReader(*charset*: Charset)**: el mateix amb un BufferedReader
 - **printWriter(*charset*: Charset)**: el mateix amb un Writer
 
-Per exemple, el que hem comentat més amunt: si volem els mètodes print, senzillament obtenim un **PrintWriter** a partir del File. D'aquesta manera, el Exemple\_2\_41.kt ens quedaria d'una altra manera per a obtenir el PrintWriter que volíem. Copieu el següent com **Exemple\_2\_41\_bis.kt**
+Per exemple, el que hem comentat més amunt: si volem els mètodes print, senzillament obtenim un **PrintWriter** a partir del File. D'aquesta manera, el Exemple_2_41.kt ens quedaria d'una altra manera per a obtenir el PrintWriter que volíem. Copieu el següent com **Exemple_2_41_bis.kt**
 
 ```java
 package exemples
@@ -106,14 +106,14 @@ import java.io.File
 
 fun main() {
 
-    val f\_out = File("f6.txt").printWriter()
+    val f_out = File("f6.txt").printWriter()
     val a = 5.25.toFloat()
     val b = "Hola."
-    f\_out.print(b)
-    f\_out.println("Què tal?")
-    f\_out.println(a + 3)
-    f\_out.printf("El número %d en hexadecimal és %x", 27, 27)
-    f\_out.close();
+    f_out.print(b)
+    f_out.println("Què tal?")
+    f_out.println(a + 3)
+    f_out.printf("El número %d en hexadecimal és %x", 27, 27)
+    f_out.close();
 }
 ```
 
@@ -121,8 +121,8 @@ fun main() {
 
 Hi ha altres mètodes que poden ser molt útils. Per exemple aquell que copia directament un fitxer, o tot un directori recursivament, o que esborra recursivament, ...
 
-- **copyTo(*destí*: File, *sobre\_escriure*: Boolean, *buffer*: Int)**: copia en el fitxer de destí. Per defecte no sobreescriurà, a no ser que posem true en el segon paràmentre. El tercer paràmetre és per a marcar la grandària del buffer de dades per a fer la còpia.
-- **copyRecursively(*destí*: File, *sobre\_escriure*: Boolean)**: copia recursivament el File i tots els seus descendents en el File de destí. Per defecte no sobreescriurà, a menys que posem true en el segon paràmentre. Opcionalment es pot posar un tercer paràmetre per al tractament dels possibles errors
+- **copyTo(*destí*: File, *sobre_escriure*: Boolean, *buffer*: Int)**: copia en el fitxer de destí. Per defecte no sobreescriurà, a no ser que posem true en el segon paràmentre. El tercer paràmetre és per a marcar la grandària del buffer de dades per a fer la còpia.
+- **copyRecursively(*destí*: File, *sobre_escriure*: Boolean)**: copia recursivament el File i tots els seus descendents en el File de destí. Per defecte no sobreescriurà, a menys que posem true en el segon paràmentre. Opcionalment es pot posar un tercer paràmetre per al tractament dels possibles errors
 - **deleteRecursively():** esborra el file i tots els seus possibles descendents
 
 També hi ha altres mètodes, com per exemple per a comprovar si el nom del File té extensió, o si comença o finalitza igual que un altre, o per a normalitzar la ruta (llevar possibles redundàncies), i altre més.
