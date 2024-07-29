@@ -28,23 +28,23 @@ Els fluxos d'eixida són molt molt pareguts, tots ells heretaran de **OutputStre
 
 
 
-Constructors de FileInputStream
+<span style="color: blue;"> Constructors de FileInputStream </span>
 
 Com hem comentat, qui més ens interessa de tots els InputStream és el **FileInpuStream**, per a poder accedir a la informació d'un fitxer. Dos són els constructors de FileInputStream:
 
 - **FileInputStream (*f*: File)**: en el paràmetre se li passa un File (dels vistos en el tema anterior), que ha de ser una referència al fitxer.
-- **FileInputStream (*nom\_f*: String)**: en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer. Ens permetrà fer referència al fitxer de forma més ràpida, sense haver de passar per un File.
+- **FileInputStream (*nom_f*: String)**: en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer. Ens permetrà fer referència al fitxer de forma més ràpida, sense haver de passar per un File.
 
 
 
-Constructors del FileOutputStream
+<span style="color: blue;"> Constructors del FileOutputStream </span>
 
 Canviaran lleugerament respecte als d'entrada, ja que a més de fer referència al fitxer, opcionalment podrem d'especificar la manera d'escriure en el fitxer en cas que aquest ja existesca: bé afegint al final, o bé destruint la informació anterior. Aquestos són els constructors:
 
 - **FileOutputStream (*f*: File)**: en el paràmetre se li passa un File. Si no existia, el crearà; si ja existia esborrarà el contingut. En ambdós casos l'obrirà en mode escriptura.
-- **FileOutputStream (*nom\_f*: String)**: igual que en l'anterior, però en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer.
+- **FileOutputStream (*nom_f*: String)**: igual que en l'anterior, però en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer.
 - **FileOutputStream (*f*: File, *afegir*: Boolean)**: és com el primer, però si en el segon paràmetre se li passa **true**, en cas que ja existira el fitxer, la informació s'afegirà al final, en compte de substituir el que ja hi havia. Si en aquest paràmetre se li passa **false** s'esborrarà el contingut anterior (com en el primer cas).
-- **FileOutputStream (*nom\_f*: String, *afegir*: Boolean)**: igual que en l'anterior, però en el primer paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer.
+- **FileOutputStream (*nom_f*: String, *afegir*: Boolean)**: igual que en l'anterior, però en el primer paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer.
 
 
 

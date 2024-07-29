@@ -1,6 +1,5 @@
 # <a name="main"></a>**Objectius**
 
-## **Objectius**
 L'objectiu d'aquest tema serà accedir al contingut dels fitxers, bé per a llegir únicament o bé per a guardar informació de forma permanent.
 
 Per a açò en Java disposem de les classes de **flux de dades** (**streams**). Lamentablement Java disposa d'una quantitat de streams extraordinàriament gran, cosa que suposa una gran complexitat per al programador (ja que ha de recordar moltes classes). Per contra ofereix una potencialitat molt gran.

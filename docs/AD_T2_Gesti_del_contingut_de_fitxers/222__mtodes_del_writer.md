@@ -5,48 +5,47 @@ Comencem també pel més senzill i primordial, el mètode que escriu un caràcte
 
 Igual que en l'apartat anterior, anem a veure un exemple senzill d'utilització, en el qual guardarem en un fitxer el contingut d'una cadena, ara ja sense por als caràcters estranys.
 
-En aquest primer exemple del **Writer** treballarem sobre un fitxer inexistent. Es podrà comprovar que el resultat serà la creació del fitxer amb el contingut. Copieu el següent codi en un fitxer anomenat **Exemple\_2\_31.kt** :
+En aquest primer exemple del **Writer** treballarem sobre un fitxer inexistent. Es podrà comprovar que el resultat serà la creació del fitxer amb el contingut. Copieu el següent codi en un fitxer anomenat **Exemple_2_31.kt** :
 
-**Nota**
+***
+<span style="color: blue;"> Nota </span>
 
-Hem de fer constar que si no es tanca el fitxer (millor dit el flux d'eixida) podria ser que no es guardara res en el fitxer. Per tant és una operació ben important que no hem d'oblidar.
+*Hem de fer constar que si no es tanca el fitxer (millor dit el flux d'eixida) podria ser que no es guardara res en el fitxer. Per tant és una operació ben important que no hem d'oblidar.*
+***
 
+```java
 package exemples
 
 import java.io.FileWriter
 
 fun main(args: Array<String>) {
-
-`	`val text = "Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú, ..."
-
-`	`val f\_out = FileWriter ("f5.txt")
-
-`	`for (c in text) {
-
-`		`f\_out.write(c.toInt())
-
-`	`}
-
-`	`f\_out.close()
-
+    val text = "Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú, ..."
+    val f_out = FileWriter ("f5.txt")
+    for (c in text) {
+        f_out.write(c.toInt())
+    }
+    f_out.close()
 }
-
+```
 
 
 
 En el constructor del **Writer** no hem indicat el segon paràmetre, aquell que indicava si era per a afegir o no, i per tant si no existia el fitxer el crearà, però si ja existia el fitxer, destruirà el seu contingut i el substituirà pel nou contingut. Per això si tornem a executar el programa, tindrem el mateix resultat en **f5.txt**
 
+```java
 Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú, ...
-
+```
 Anem a provar a substituir el constructor, posant ara
 
-val f\_out = FileWriter ("f5.txt", true)
+```java
+val f_out = FileWriter ("f5.txt", true)
+```
 
 Si l'executem, veurem que afegirà al final, sense destruir el que ja hi havia.
 
+```java
 Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú, ...Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú, ...
-
-
+```
 
 Altres mètodes del **Writer** són:
 

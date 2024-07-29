@@ -2,6 +2,9 @@ site_url : https://asalvadorc.github.io/AD_Tema2
 
 site_name: AD - Accés a Dades
 
+extra_css:
+  - css/extra.css
+  
 theme: 
   name: readthedocs
   logo: assets/logocaminas.png
@@ -12,17 +15,18 @@ nav:
   - Tema 2- Gestió del contingut de fitxers:
     - Objectius: AD_T2_Gesti_del_contingut_de_fitxers/objectius.md 
     - 1 - Magatzems i fluxos de dades: AD_T2_Gesti_del_contingut_de_fitxers/1__magatzems_i_fluxos_de_dades.md 
-    - 2 - Manipulació dels fluxos de dades:
-      - 2 - Manipulació dels fluxos de dades: AD_T2_Gesti_del_contingut_de_fitxers/2__manipulaci_dels_fluxos_de_dades.md  
-      - 2.1 - Fluxos orientats a bytes:
-        - 2.1 - Fluxos orientats a bytes: AD_T2_Gesti_del_contingut_de_fitxers/21__fluxos_orientats_a_bytes.md  
+    - 2 - Manipulació dels fluxos de dades: 
+      - AD_T2_Gesti_del_contingut_de_fitxers/2__manipulaci_dels_fluxos_de_dades.md  
+      - 2.1 - Fluxos orientats a bytes: 
+        - AD_T2_Gesti_del_contingut_de_fitxers/21__fluxos_orientats_a_bytes.md 
         - 2.1.1 - Mètodes del InputStream: AD_T2_Gesti_del_contingut_de_fitxers/211__mtodes_del_inputstream.md 
         - 2.1.2 - Mètodes del OutputStream: AD_T2_Gesti_del_contingut_de_fitxers/212__mtodes_del_outputstream.md 
-        - 2.2 - Fluxos orientats a caràcters: AD_T2_Gesti_del_contingut_de_fitxers/22__fluxos_orientats_a_carcters.md  
-      - 2.2.1 - Mètodes del Reader: AD_T2_Gesti_del_contingut_de_fitxers/221__mtodes_del_reader.md 
-      - 2.2.2 - Mètodes del Writer: AD_T2_Gesti_del_contingut_de_fitxers/222__mtodes_del_writer.md 
-    - 3 - Fluxos decoradors:
-      - 3 - Fluxos decoradors: AD_T2_Gesti_del_contingut_de_fitxers/3__fluxos_decoradors.md
+      - 2.2 - Fluxos orientats a caràcters: 
+         - AD_T2_Gesti_del_contingut_de_fitxers/22__fluxos_orientats_a_carcters.md   
+         - 2.2.1 - Mètodes del Reader: AD_T2_Gesti_del_contingut_de_fitxers/221__mtodes_del_reader.md 
+         - 2.2.2 - Mètodes del Writer: AD_T2_Gesti_del_contingut_de_fitxers/222__mtodes_del_writer.md 
+    - 3 - Fluxos decoradors: 
+      - AD_T2_Gesti_del_contingut_de_fitxers/3__fluxos_decoradors.md
       - 3.1 - Decoradors de InputStream i OtputStream: AD_T2_Gesti_del_contingut_de_fitxers/31__decoradors_de_inputstream_i_otputstream.md 
       - 3.2 - Decoradors de Reader i Writer: AD_T2_Gesti_del_contingut_de_fitxers/32__decoradors_de_reader_i_writer.md 
       - 3.3 - ConversorsInputStreamReader i OutputStreamWriter: AD_T2_Gesti_del_contingut_de_fitxers/33__conversors_inputstreamreader_i_outputstreamwriter.md 

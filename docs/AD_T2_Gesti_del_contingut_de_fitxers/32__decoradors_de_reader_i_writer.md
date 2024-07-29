@@ -3,7 +3,7 @@ Mirem ara els decoradors de la jerarquia **Reader** i **Writer** . Tornen a se
 
 ![T2_2_2.png](T2__2_2.png)
 
-` `Fixem-nos primers en els decoradors de **Reader**:
+Fixem-nos primers en els decoradors de **Reader**:
 
 |Classe|Explicació|
 | :- | :- |
@@ -25,8 +25,8 @@ El **PrintWriter** funciona quasi exactament igual que el **PrintStream**, i 
 El **BufferedReader** sí que ens oferirà facilitats interessants, com llegir una línia sencera. En canvi el **BufferedWriter** no ens ofereix tantes facilitats com el **PrintWriter**, és un poc més incòmode.
 
 
+<span style="color: blue;"> BufferedReader i BufferedWriter. PrintWriter </span>
 
-BufferedReader i BufferedWriter. PrintWriter
 
 BufferedReader i BufferedWriter munten un buffer (d'entrada i d'eixida respectivament) de caràcters per a fer més eficient la transferència. A banda d'això tindran uns mètodes que ens seran molt útils.
 
@@ -47,59 +47,42 @@ Com veieu el **BufferedReader** sí que ens ofereix la possibilitat de llegir u
 - mètodes **println(*qualsevol\_tipus*)** , a banda de tot el de **print**, baixen de línia
 - mètode **printf()** , que permet donar un format
 
-Veiem un senzill exemple per a copiar el contingut d'un fitxer de text i modificar-lo lleugerament. El més còmode serà anar línia a línia. Per tant utilitzarem el **BufferedReader** per a llegir línies, i el **PrintWriter** per a escriure línies. La lleugera modificació consistirà en posar el número de línia davant. Copieu el següent codi en un fitxer anomenat **Exemple\_2\_51.kt** :
-
+Veiem un senzill exemple per a copiar el contingut d'un fitxer de text i modificar-lo lleugerament. El més còmode serà anar línia a línia. Per tant utilitzarem el **BufferedReader** per a llegir línies, i el **PrintWriter** per a escriure línies. La lleugera modificació consistirà en posar el número de línia davant. Copieu el següent codi en un fitxer anomenat **Exemple_2_51.kt** :
+```java
 package exemples
 
 import java.io.BufferedReader
-
 import java.io.FileReader
-
 import java.io.PrintWriter
-
 import java.io.FileWriter
 
 fun main(args: Array<String>) {
-
-`    `val f\_ent = BufferedReader(FileReader ("f7\_ent.txt"))
-
-`    `val f\_eix = PrintWriter(FileWriter ("f7\_eix.txt"))
-
-`    `var cad = f\_ent.readLine();
-
-`    `var i = 0
-
-`    `while (cad != null) {
-
-`        `i++
-
-`        `f\_eix.println("" + i + ".- " + cad)
-
-`        `cad = f\_ent.readLine()
-
-`    `}
-
-`    `f\_eix.close()
-
-`    `f\_ent.close()
-
+    var f_ent = BufferedReader(FileReader ("f7_ent.txt"))
+    val f_eix = PrintWriter(FileWriter ("f7_eix.txt"))
+    var cad = f_ent.readLine();
+    var i = 0
+    while (cad != null) {
+        i++
+        f_eix.println("" + i + ".- " + cad)
+        cad = f_ent.readLine()
+    }
+    f_eix.close()
+    f_ent.close()
 }
+```
+Si en el fitxer d'entrada (**f7_ent.txt**) tenim guardada la següent informació (introduïda amb el notepad o gedit):
 
-Si en el fitxer d'entrada (**f7\_ent.txt**) tenim guardada la següent informació (introduïda amb el notepad o gedit):
-
+```java
 Primera
-
 Segona
-
 Tercera
+```
 
-` `En el fitxer d'eixida (**f7\_eix.txt**) tindrem:
-
-1\.- Primera
-
-2\.- Segona
-
-3\.- Tercera
-
+En el fitxer d'eixida (**f7_eix.txt**) tindrem:
+```java
+1.- Primera
+2.- Segona
+3.- Tercera
+```
 
 Llicenciat sota la [Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5](http://creativecommons.org/licenses/by-nc-sa/2.5/)

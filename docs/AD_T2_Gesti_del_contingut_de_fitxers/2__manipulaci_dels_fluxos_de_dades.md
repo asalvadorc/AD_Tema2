@@ -1,4 +1,5 @@
 # <a name="main"></a>**2 - Manipulació dels fluxos de dades**
+
 En Java, i per tant també en Kotlin, no tindrem una única classe per a manipular els fluxos de dades i així arribar al contingut dels fitxers. És una cosa que de vegades se li critica a Java, que hi ha una jerarquia molt extensa de fluxos, i són moltes classes a recordar i utilitzar. Per contra fa que siga molt versàtil. En l'últim punt del tema veurem la simplificació que ens proposa Kotlin.
 
 Aquestes classes es trobaran en dues jerarquies, la dels **fluxos orientats a bytes** i la dels **fluxos orientats a caràcters**.

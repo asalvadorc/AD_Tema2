@@ -39,23 +39,26 @@ En canvi les classes **FileReader** o **FileWriter** agafen la codificació **p
 
 
 
-Constructors de FileReader
+<span style="color: blue;"> Constructors de FileReader </span>
+
+
 
 De forma totalment paral·lela als fluxos orientats a byte, el **FileReader** té dos constructors, acceptant com a paràmetre un File o un String (amb el nom del fitxer). La diferència ara és que la unitat de transferència serà el caràcter (en compte d'un byte):
 
 - **FileReader (*f*: File)**: en el paràmetre se li passa un File (dels vistos en el tema anterior), que ha de ser una referència al fitxer.
-- **FileReader (*nom\_f*: String)**: en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer. Ens permetrà fer referència al fitxer de forma més ràpida, sense haver de passar per un File.
+- **FileReader (*nom_f*: String)**: en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer. Ens permetrà fer referència al fitxer de forma més ràpida, sense haver de passar per un File.
 
 
 
-Constructors del FileWriter
+<span style="color: blue;"> Constructors del FileWriter</span>
+
 
 També totalment paral·lel al FileOutputStream. Canviaran lleugerament respecte als d'entrada, ja que a més de fer referència al fitxer, opcionalment podrem d'especificar la manera d'escriure en el fitxer en cas que aquest ja existesca: bé afegint al final, o bé destruint la informació anterior. Aquestos són els constructors:
 
 - **FileWriter (*f*: File)**: en el paràmetre se li passa un File. Si no existia, el crearà; si ja existia esborrarà el contingut. En ambdós casos l'obrirà en mode escriptura.
-- **FileWriter (*nom\_f*: String)**: igual que en l'anterior, però en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer.
+- **FileWriter (*nom_f*: String)**: igual que en l'anterior, però en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer.
 - **FileWriter *(f: File*, *afegir*: Boolean)**: és com el primer, però si en el segon paràmetre se li passa **true** en compte de substituir el que ja hi havia, la informació s'afegirà al final. Si en aquest paràmetre se li passa **false** s'esborrarà el contingut anterior (com en el primer cas).
-- **FileWriter *(nom\_f: String*, *afegir*: Boolean)**: igual que en l'anterior, però en el primer paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer.
+- **FileWriter *(nom_f: String*, *afegir*: Boolean)**: igual que en l'anterior, però en el primer paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer.
 
 
 Llicenciat sota la [Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5](http://creativecommons.org/licenses/by-nc-sa/2.5/)

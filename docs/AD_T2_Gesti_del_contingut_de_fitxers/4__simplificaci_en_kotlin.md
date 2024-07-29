@@ -3,7 +3,7 @@ Tots els programes anteriors funcionen en Kotlin perfectament, perquè estem uti
 
 Tanmateix, Kotlin proporcionarà funcionalitat extra en les classes, que ens permetrà simplificar prou els programes. Són molts els mètodes nous que ens proporcionarà. Ací tenim uns quants agrupats per temàtica.
 
-Mètodes sobre bytes
+<span style="color: blue;">Mètodes sobre bytes</span>
 
 - **readBytes()** : torna un **ByteArray** amb tots els bytes del fitxer, és a dir, tot el seu contingut en forma de bytes
 - **writeBytes(*array*: ByteArray)** : escriu en el fitxer el contingut del ByteArray. Si el fitxer ja existia, el sobreescriura.
@@ -11,41 +11,36 @@ Mètodes sobre bytes
 
 Tornem a fer el primer exemple, Exemple\_2\_01.kt, utilitzant aquesta funcionalitat extra. Copieu el següent com **Exemple\_2\_01\_bis.kt**:
 
+```java
 package exemples
 
 import java.io.File
 
 fun main(){
 
-`	`val f = File("f1.txt")
-
-`	`val tot = f.readBytes()
-
-`	`for (c in tot){
-
-`		`println(c.toChar())
-
-`	`}
-
+    val f = File("f1.txt")
+    val tot = f.readBytes()
+    for (c in tot){
+        println(c.toChar())
+    }
 }
-
+```
 I com a exemple d'escriptura, podem fer Exemple\_2\_11.kt,on ho podem fer tot en una línia. Copieu el següent com **Exemple\_2\_11\_bis.kt**:
 
+```java
 package exemples
 
 import java.io.File
 
 fun main() {
 
-`	`val text = "Contingut per al fitxer."
-
-`	`File("f3.txt").writeBytes(text.toByteArray())
-
+    val text = "Contingut per al fitxer."
+    File("f3.txt").writeBytes(text.toByteArray())
 }
-
+```
 Recordeu que en els dos exemples anteriors per comoditat estem utilitzant caràcters com a dades, i no seria el més correcte utilitzar bytes ni de lectura ni d'escriptura. Ho hem fet únicament per comoditat.
 
-Mètodes sobre caràcters
+<span style="color: blue;">Mètodes sobre caràcters</span>
 
 - **readText(*charset*: CharSet)**: torna un String amb la tots els caràcters del fitxer. Opcionalment li podem dir el joc de caràcters (si no li ho diem utilitzarà UTF-8)
 - **readLines(*charset*: CharSet)**: torna un List de Strings amb totes les línies del fitxer
@@ -53,50 +48,45 @@ Mètodes sobre caràcters
 - **appendText(*text*: String, *charset*: CharSet)**: el mateix que l'anterior, però afegint al final.
 
 Com a exemple anem a veure Exemple\_2\_21.kt. Copieu el següent com **Exemple\_2\_21\_bis.kt**:
-
+```java
 package exemples
 
 import java.io.File
 
 fun main(){
 
-`	`val tot = File("f1.txt").readText()
-
-`	`for(c in tot){
-
-`		`println(c)
-
-`	`}
-
+    val tot = File("f1.txt").readText()
+    for(c in tot){
+        println(c)
+    }
 }
-
+```
 I com a exemple d'escriptura, l'adaptació de Exemple\_2\_31.kt. Copieu el següent com **Exemple\_2\_31\_bis.kt**:
 
+```java
 package exemples
 
 import java.io.File
 
 fun main() {
 
-`	`val text = "Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú, ..."
-
-`	`File("f5.txt").writeText(text)
-
+    val text = "Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú, ..."
+    File("f5.txt").writeText(text)
 }
-
+```
 I com a exemple de copiar un fitxer en un altre, fins i tot canviant el joc de caràcters, farem una altra versió del Exemple\_2\_61.kt. Copieu el següent com **Exemple\_2\_61\_bis.kt**:
 
+```java
 package exemples
 
 import java.io.File
 
 fun main() {
 
-`	`File("f5\_2.txt").writeText(File("f5.txt").readText(), Charsets.ISO\_8859\_1)
-
+    File("f5\_2.txt").writeText(File("f5.txt").readText(), Charsets.ISO\_8859\_1)
 }
-
-Mètodes de conversió
+```
+ <span style="color: blue;">Mètodes de conversió</span>
 
 En ocasions és possible que no tinguem un mètode directament en File que ens vinga bé. Un exemple són els mètodes print (print, println, printf). Aleshores, senzillament a partir del File la classe que ens convinga de la jerarquia de InputStream/OutputStream o Reader/Writer. Són mètodes que ens tornen la classe desitjada:
 
@@ -107,33 +97,27 @@ En ocasions és possible que no tinguem un mètode directament en File que ens v
 - **bufferedReader(*charset*: Charset)**: el mateix amb un BufferedReader
 - **printWriter(*charset*: Charset)**: el mateix amb un Writer
 
-Per exemple, el que hem comentat més amunt: si volem els mètodes print, senzillament obtenim un **PrintWriter** a partir del File. D'aquesta manera, el Exemple\_2\_41.kt ens quedaria d'una altra manera per a obtenir el PrintWriter que volíem. Copieu el següent com **Exemple\_2\_41\_bis.kt**:
+Per exemple, el que hem comentat més amunt: si volem els mètodes print, senzillament obtenim un **PrintWriter** a partir del File. D'aquesta manera, el Exemple\_2\_41.kt ens quedaria d'una altra manera per a obtenir el PrintWriter que volíem. Copieu el següent com **Exemple\_2\_41\_bis.kt**
 
+```java
 package exemples
 
 import java.io.File
 
 fun main() {
 
-`	`val f\_out = File("f6.txt").printWriter()
-
-`	`val a = 5.25.toFloat()
-
-`	`val b = "Hola."
-
-`	`f\_out.print(b)
-
-`	`f\_out.println("Què tal?")
-
-`	`f\_out.println(a + 3)
-
-`	`f\_out.printf("El número %d en hexadecimal és %x", 27, 27)
-
-`	`f\_out.close();
-
+    val f\_out = File("f6.txt").printWriter()
+    val a = 5.25.toFloat()
+    val b = "Hola."
+    f\_out.print(b)
+    f\_out.println("Què tal?")
+    f\_out.println(a + 3)
+    f\_out.printf("El número %d en hexadecimal és %x", 27, 27)
+    f\_out.close();
 }
+```
 
-Altres mètodes
+<span style="color: blue;"> Altres mètodes</span>
 
 Hi ha altres mètodes que poden ser molt útils. Per exemple aquell que copia directament un fitxer, o tot un directori recursivament, o que esborra recursivament, ...
 

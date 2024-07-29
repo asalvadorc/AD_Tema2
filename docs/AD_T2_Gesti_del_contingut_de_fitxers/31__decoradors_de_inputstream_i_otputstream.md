@@ -4,7 +4,7 @@ Com hem comentat ens serviran per a donar una funcionalitat extra. Són els que 
 
 ![T2_2_1.png](T2_2_1.png) 
 
-` `Fixem-nos primers en els decoradors de **InputStream**:
+Fixem-nos primers en els decoradors de **InputStream**:
 
 |Classe|Explicació|
 | :- | :- |
@@ -34,17 +34,18 @@ Comentem-los un poquet més.
 **ObjectInputStream** i **ObjectOutputStream** (que curiosament són els únics que no depenen de **FilterInputStream** i **FilterOutputStream**) ens permetran guardar o recuperar de cop tot un objecte, és a dir totes les seues propietats (les dades de l'objecte). No ens haurem de preocupar ni de l'ordre ni del tipus de les propietats de l'objecte: quan escrivim l'objecte, es guardaran totes les dades de forma compacta; i quan llegim es recuperaran de forma correcta. És per tant una parella de classes d'extrema utilitat per a guardar objectes, que en definitiva són l'essència de la programació en Java. Els veurem en detall en el proper **Tema 3**. 
 
 
+<span style="color: blue;"> PrintStream </span> 
 
-PrintStream
 
-` `L'únic que ens queda és el que veurem ara amb un poquet més de detall, el **PrintStream**. Ens permetrà bàsicament 3 coses:
+L'únic que ens queda és el que veurem ara amb un poquet més de detall, el **PrintStream**. Ens permetrà bàsicament 3 coses:
 
 - Escriure dades de més d'un tipus de dades. Per exemple **print(5.25)** escriu un número real, i **print("Hola")** escriu tot un string.
 - Donar un determinat format a l'eixida, amb tota la funcionalitat a què estem acostumats amb **printf**
 - Escriure tota una línia amb **println**, és a dir, acabar una dada amb el retorn de carro, per a baixar de línia.
 
-` `Mirem un exemple que ens pot donar idea de la seua funcionalitat. Copieu el següent codi en un fitxer anomenat **Exemple\_2\_41.kt** :
+Mirem un exemple que ens pot donar idea de la seua funcionalitat. Copieu el següent codi en un fitxer anomenat **Exemple_2_41.kt** :
 
+```java
 package exemples
 
 import java.io.PrintStream
@@ -52,37 +53,29 @@ import java.io.PrintStream
 import java.io.FileOutputStream
 
 fun main(args: Array<String>) {
-
-`	`val f\_out = PrintStream(FileOutputStream ("f6.txt"))
-
-`	`val a = 5.25.toFloat()
-
-`	`val b = "Hola."
-
-`	`f\_out.print(b)
-
-`	`f\_out.println("Què tal?")
-
-`	`f\_out.println(a + 3)
-
-`	`f\_out.printf("El número %d en hexadecimal és %x", 27, 27)
-
-`	`f\_out.close();
-
+    val f_out = PrintStream(FileOutputStream ("f6.txt"))
+    val a = 5.25.toFloat()
+    val b = "Hola."
+    f_out.print(b)
+    f_out.println("Què tal?")
+    f_out.println(a + 3)
+    f_out.printf("El número %d en hexadecimal és %x", 27, 27)
+    f_out.close();
 }
+```
+Es crearà el fitxer **f6.txt** (si ja existia esborrarà el contingut anterior) amb el següent contingut:
 
-` `Es crearà el fitxer **f6.txt** (si ja existia esborrarà el contingut anterior) amb el següent contingut:
-
+```java
 Hola.Què tal?
-
 8\.25
-
 El número 27 en hexadecimal és 1b
+```
 
 En realitat el **PrintStream**, a banda del constructor que accepta un **OutputStream**, també té un altre que accepta un **File** i fins i tot un altre que accepta un **String** amb el nom del fitxer. Per tant, la següent sentència també ens funcionaria:
 
-`	`val f\_out = PrintStream("f6.txt")
-
+```java
+val f_out = PrintStream("f6.txt")
+```
 
 
 Llicenciat sota la [Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5](http://creativecommons.org/licenses/by-nc-sa/2.5/)

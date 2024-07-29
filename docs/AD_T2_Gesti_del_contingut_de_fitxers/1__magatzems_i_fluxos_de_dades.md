@@ -9,7 +9,8 @@ Posant un exemple clàssic, els pantans i dipòsits on s'emmagatzema l'aigua ser
 
 Java utilitza els **streams** (fluxos de dades) per a poder accedir a la informació. Però els *streams* no limiten la transferència de dades d'un fitxer, sinó que es generalitza per a qualsevol font de dades: memòria, xarxa, fins i tot altres aplicacions. D'aquesta manera es generalitza l'accés a la informació des de qualsevol procedència: si connectem un stream a un fitxer, estarem accedint a un fitxer, però si connectem el stream a un altre programa estarem accedint a les dades proporcionades per un altre programa. Intentarem veure exemples d'accés a diferents fonts a través d'un stream, però ho aplicarem sobretot a l'accés a fitxers, clar.
 
-Fluxos d'entrada i d'eixida
+
+<span style="color: blue;"> Fluxos d'entrada i d'eixida </span> 
 
 La primera diferenciació que farem en els fluxos de dades és si són d'entrada o d'eixida:
 
@@ -18,21 +19,23 @@ La primera diferenciació que farem en els fluxos de dades és si són d'entrada
 
 
 
-Fluxos i tipus de dades
+<span style="color: blue;"> Fluxos i tipus de dades </span>
+
+
 
 Per mig del stream aconseguirem que una dada es guarde en un fitxer, o millor dit una sèrie de dades. Quan guardem moltes dades, es compactaran unes al costat de les altres (el que havíem comentat com a seqüenciació de bits). Si intentem recuperar-les, haurem d'anar amb molt de compte amb la grandària de cadascuna de les dades i el seu tipus. Anem a posar un exemple:
 
 - Suposem que volem guardar una dada numèrica en un enter (**int**). Els enters, en Java, es guarden en 32 bits. Si volem guardar el número **1.213.156.417**, ens quedarà en binari (els hem posat en grups de 8 bits, per facilitar la lectura):
 
-01001000 01001111 01001100 01000001
+`01001000 01001111 01001100 01000001`
 
 - Suposem ara que volem guardar dos números enters, però del tipus **short**, que només ocupa 16 bits. El número 18.511 es representa en binari com 01001000 01001111, i el número 19.521 es representa 01001100 01000001. Si posem una dada darrere de l'altra (com es guardarà en un fitxer), el resultat serà:
 
-01001000 01001111 01001100 01000001
+`01001000 01001111 01001100 01000001`
 
 - Suposem ara que volem guardar la paraula HOLA. Si guardem el codi ASCII de cada lletra tindrem: **H** (01001000), **O** (01001111), **L** (01001100) i **A** (01000001)
 
-01001000 01001111 01001100 01000001
+`01001000 01001111 01001100 01000001`
 
 En resum, les 3 informacions (el número de 32 bits, els 2 números de 16 bits, i la paraula HOLA) es guarden de forma idèntica, com a seqüència de bits.
 
