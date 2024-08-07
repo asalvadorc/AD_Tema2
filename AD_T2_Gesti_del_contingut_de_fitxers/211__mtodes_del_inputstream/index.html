@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://asalvadorc.github.io/AD_Tema2/AD_T2_Gesti_del_contingut_de_fitxers/211__mtodes_del_inputstream/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>2.1.1 - Mètodes del InputStream - AD - Accés a Dades</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "2.1.1 - M\u00e8todes del InputStream";
+        var mkdocs_page_input_path = "AD_T2_Gesti_del_contingut_de_fitxers/211__mtodes_del_inputstream.md";
+        var mkdocs_page_url = "/AD_Tema2/AD_T2_Gesti_del_contingut_de_fitxers/211__mtodes_del_inputstream/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../assets/logocaminas.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Tema 2- Gestió del contingut de fitxers</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1__magatzems_i_fluxos_de_dades/">1 - Magatzems i fluxos de dades</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >2 - Manipulació dels fluxos de dades</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../2__manipulaci_dels_fluxos_de_dades/">2 - Manipulació dels fluxos de dades</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" >2.1 - Fluxos orientats a bytes</a>
+    <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../21__fluxos_orientats_a_bytes/">2.1 - Fluxos orientats a bytes</a>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">2.1.1 - Mètodes del InputStream</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../212__mtodes_del_outputstream/">2.1.2 - Mètodes del OutputStream</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >2.2 - Fluxos orientats a caràcters</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../22__fluxos_orientats_a_carcters/">2.2 - Fluxos orientats a caràcters</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../221__mtodes_del_reader/">2.2.1 - Mètodes del Reader</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../222__mtodes_del_writer/">2.2.2 - Mètodes del Writer</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >3 - Fluxos decoradors</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../3__fluxos_decoradors/">3 - Fluxos decoradors</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../31__decoradors_de_inputstream_i_otputstream/">3.1 - Decoradors de InputStream i OtputStream</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../32__decoradors_de_reader_i_writer/">3.2 - Decoradors de Reader i Writer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../33__conversors_inputstreamreader_i_outputstreamwriter/">3.3 - ConversorsInputStreamReader i OutputStreamWriter</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4__simplificaci_en_kotlin/">4 - Simplificació en Kotlin</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">AD - Accés a Dades</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Tema 2- Gestió del contingut de fitxers</li>
+          <li class="breadcrumb-item">2 - Manipulació dels fluxos de dades</li>
+          <li class="breadcrumb-item">2.1 - Fluxos orientats a bytes</li>
+      <li class="breadcrumb-item active">2.1.1 - Mètodes del InputStream</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="211-metodes-del-inputstream">2.1.1 - Mètodes del InputStream</h1>
+<p><u><strong>Nota</strong></u></p>
+<div style="background-color: #d6eaf8; color: black; padding: 5px;">
+Per a fer els primers exemples, i únicament per comoditat, utilitzarem fitxers
+de text, encara que estiguem en fluxos orientats a byte. Açò no és l'adequat,
+ja que per a fitxers de text hauríem d'utilitzar fluxos orientats a caràcter.
+Però com dic és per comoditat, perquè serà molt fàcil crear fitxers des de
+qualsevol editor de textos, i que després utilitzarem des de Java o Kotlin.
+L'inconvenient serà que no tots els caràcters eixiran de forma correcta,
+justament per utilitzar els fluxos de dades orientats a byte.
+</div>
+<p></p>
+<p>El primer mètode que hem de veure del <strong>InputStream</strong> és aquell que ens permet
+una lectura senzilla:</p>
+<ul>
+<li>int <strong>read()</strong> : llig el següent byte del flux d'entrada i el retorna com un <strong>enter</strong>. Si no hi ha cap byte disponible perquè s’ha arribat al final de la seqüència de bytes, es retornarà -1. Si no es pot llegir el següent byte per alguna causa (per exemple si després d'arribar al final intentem llegir un altre byte, o perquè es produeix un error en llegir l'entrada) es llançarà una excepció del tipus <strong><em>IOException</em></strong>. Es tracta d’un mètode abstracte, que les classes especifiques sobreescriuran adaptant-lo a una font de dades concreta (un fitxer, un array de bytes, ...). I observeu com es tracta d'una lectura seqüencial. Comencem pel primer byte del fitxer, i a cada <strong>read</strong> llig el següent byte fins arribar al final. Els tractaments que veurem en aquest tema seran sempre seqüencials.</li>
+</ul>
+<p>Abans de veure altres mètodes, mirem un exemple. Per a aquest exemple fa falta
+un fitxer anomenat <strong>f1.txt</strong> , que pot ser un fitxer de text creat amb
+qualsevol editor senzillet, com per exemple <strong>gedit</strong> o el <strong>Bloc de notes</strong>.
+Ha d'estar en el directori del projecte (el projecte <strong>Tema2</strong>), i així no
+caldrà posar la ruta. Per exemple podríem posar el següent contingut:</p>
+<pre><code>Hola, què tal?
+</code></pre>
+<p>El que farà el programa és traure per pantalla caràcter a caràcter (en línies
+diferents). L'heu de copiar en un fitxer anomenat <strong>Exemple_2_01.kt</strong> dins
+d'un paquet anomenat <strong>exemples</strong> en el projecte del Tema 2:</p>
+<pre><code>package exemples
+
+import java.io.FileInputStream
+
+fun main(args: Array&lt;String&gt;){
+    val f_in = FileInputStream("f1.txt")
+    var c = f_in.read()
+    while (c!=-1){
+        println(c.toChar())
+        c = f_in.read()
+    }
+    f_in.close()
+}
+</code></pre>
+<p>El resultat en Ubuntu serà aquest:</p>
+<pre><code>H  
+o  
+l  
+a  
+,  
+
+q  
+u  
+Ã  
+¨  
+
+t  
+a  
+l  
+?  
+</code></pre>
+<p>Potser en Windows si que apareguen bé tots els caràcters, ja que utilitza per
+defecte una altra codificació. Però no li donarem ara importància al fet que
+no apareguen bé els caràcters especials. Observeu com estem utilitzant un
+<strong>InputStream</strong> , concretament un <strong>FileInputStream</strong> , per a llegir un fitxer
+de text. Açò no és el més apropiat, com ja havíem comentat abans, sinó que
+hauríem d'utilitzar algun flux orientat a caràcters, i no orientat a bytes. El
+programa funcionarà si utilitzem codificació ASCII (o ISO-8859) ja que cada
+caràcter es guarda en un byte. Si ens despistem i el fitxer el gaurdem en
+UTF-8, no eixiran bé els caràcters com ç, ñ o vocals accentuades (que es
+guarden en 2 bytes). I si el guardem en UTF-16, encara eixirà pitjor.</p>
+<p>Hem utilitzat el constructor que accepta un String com a paràmetre. Queda més
+curt, però seria totalment equivalent substituir la construcció anterior per
+aquestes dues línies</p>
+<pre><code>    val f = File("f1.txt")
+    val f_in = FileInputStream(f)
+</code></pre>
+<p>El <strong>read</strong> obté un enter, que després l'intentem convertir en caràcter.
+Finalitzem quan l'enter és -1.</p>
+<p>Aquest segon exemple té l'entrada no des d'un fitxer, sinó des d'un
+<strong>ByteArrayInputStream</strong>. A banda de que l'hem d'inicialitzar diferent, podem
+observar com el tractament posterior és idèntic. Copieu-lo en un fitxer
+anomenat <strong>Exemple_2_02.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.ByteArrayInputStream
+
+fun main(args: Array&lt;String&gt;) {
+    val ent_1 = "Aquest és un byte array"
+    val f_in = ByteArrayInputStream(ent_1.toByteArray())
+    var c = f_in.read()
+    while (c != -1) {
+        println(c.toChar())
+        c = f_in.read()
+    }
+    f_in.close()
+}
+</code></pre>
+<p>Una altra vegada els caràcters especial eixiran malament, ja que en compte de
+un <strong>InputStream</strong> (en aquest cas <strong>ByteArrayInputStream</strong>) el més adequat
+seria un flux orientat a caràcters, però com a exemple sí que ens val.</p>
+<p>Mirem un tercer exemple, per veure el <strong>SequenceInputStream</strong> , on es poden
+enganxar de forma sequencial diferents InputStream. Després d'aquest exemple
+ja ens centrarem en els fitxers, que és el que ens interessa. Copieu-lo en un
+fitxer anomenat <strong>Exemple_2_03.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.ByteArrayInputStream
+import java.io.FileInputStream
+import java.io.SequenceInputStream
+
+fun main(args: Array&lt;String&gt;) {
+    val f1 = FileInputStream("f1.txt")
+    val ent_1 = "Aquest és un byte array"
+    val f2 = ByteArrayInputStream(ent_1.toByteArray())
+    val f_in = SequenceInputStream(f1,f2)
+    var c = f_in.read()
+    while (c != -1) {
+        println(c.toChar())
+        c = f_in.read()
+    }
+    f_in.close()
+}
+</code></pre>
+<p>Altres mètodes del <strong>InputStream</strong> són:</p>
+<ul>
+<li>int <strong>read(<em>buffer</em> : ByteArray)</strong>: llig un número determinat de bytes de l'entrada, guardant-los en el paràmetre (que actuarà com un buffer). El número de bytes llegits serà com a màxim la grandària del buffer, encara que podria ser menor (si no hi ha prou bytes, per exemple). El mètode tornarà el número de bytes que realment s'han llegit com un enter. Si no hi haguera cap byte disponible, es retornarà -1.</li>
+<li>int <strong>available()</strong> : indica quants bytes hi ha disponibles per a la lectura. Sobretot serviria com a condició de final de bucle (si hi ha 0 bytes disponibles, és que ja hem acabat), encara que hi ha altres maneres de fer la condició de final de bucle.</li>
+<li>long <strong>skip(<em>despl</em> : Long)</strong>: salta, despreciant-los, tant bytes com indica el paràmetre. Podria ser que no puguera saltar el número de bytes especificat per diferents raons. Torna el número de bytes realment saltats.</li>
+<li>int <strong>close()</strong> : tanca el flux de dades.</li>
+</ul>
+<p>Mirem un altre exemple, utilitzant ara el buffer com a paràmetre del <strong>read</strong>.
+Fa falta que existesca un fitxer anomenat <strong>f2.txt</strong> en l'arrel del projecte,
+com es comenta després. Copieu-lo en un fitxer anomenat <strong>Exemple_2_04.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.FileInputStream
+
+fun main(args: Array&lt;String&gt;) {
+    val f_in = FileInputStream("f2.txt")
+    var buffer = ByteArray(30)
+    var n = f_in.read(buffer)
+    while (n != -1) {
+        for (i in 0..n - 1)
+            print(buffer[i].toChar())
+        println("")
+        n = f_in.read(buffer)
+    }
+    f_in.close();
+}
+</code></pre>
+<p>Es llegiran els caràcters de 30 en 30, ja que el buffer és d'aquesta
+grandària. Com que es guarda en un buffer de bytes (bytes, no caràcters),
+haurem de recórrer aquest buffer (fins el número de caràcters llegits, que és
+<strong>n</strong>) convertint cada byte en caràcter. Hem suposat que en el fitxer
+<strong>f2.txt</strong> tenim un text prou llarg com per a veure el funcionament. Si per
+exemple el contingut de <strong>f2.txt</strong> és aquest:</p>
+<p>Hola. Aquest és un text més llarg, per veure com gestiona els bytes amb un
+buffer de 30 caràcters.<br />
+Com que ho llegim des d'un InputStream, els caràcters especials potser no
+isquen bé.</p>
+<p>Aquesta seria l'eixida:</p>
+<pre><code>Hola. Aquest ￃﾩs un text mￃﾩs  
+llarg, per veure com gestiona  
+els bytes amb un buffer de 30  
+carￃﾠcters.  
+Com que ho llegim  
+des d'un InputStream, els carￃ  
+ﾠcters especials potser no isq  
+uen bￃﾩ.
+</code></pre>
+<p>Recordeu que estem llegint un fitxer de text des d'un InputStream, cosa gens
+convenient ja que els caràcters com ç, ñ, o vocals accentuades difícilment
+podrem fer que apareguen bé. Ho arreglarem amb els fluxos orientats a
+caràcter.</p>
+<p>Llicenciat sota la  <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial
+CompartirIgual 2.5</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../21__fluxos_orientats_a_bytes/" class="btn btn-neutral float-left" title="2.1 - Fluxos orientats a bytes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../212__mtodes_del_outputstream/" class="btn btn-neutral float-right" title="2.1.2 - Mètodes del OutputStream">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../21__fluxos_orientats_a_bytes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../212__mtodes_del_outputstream/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

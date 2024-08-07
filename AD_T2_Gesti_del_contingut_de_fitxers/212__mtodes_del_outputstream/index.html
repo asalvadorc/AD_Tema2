@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://asalvadorc.github.io/AD_Tema2/AD_T2_Gesti_del_contingut_de_fitxers/212__mtodes_del_outputstream/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>2.1.2 - Mètodes del OutputStream - AD - Accés a Dades</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "2.1.2 - M\u00e8todes del OutputStream";
+        var mkdocs_page_input_path = "AD_T2_Gesti_del_contingut_de_fitxers/212__mtodes_del_outputstream.md";
+        var mkdocs_page_url = "/AD_Tema2/AD_T2_Gesti_del_contingut_de_fitxers/212__mtodes_del_outputstream/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../assets/logocaminas.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Tema 2- Gestió del contingut de fitxers</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1__magatzems_i_fluxos_de_dades/">1 - Magatzems i fluxos de dades</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >2 - Manipulació dels fluxos de dades</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../2__manipulaci_dels_fluxos_de_dades/">2 - Manipulació dels fluxos de dades</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" >2.1 - Fluxos orientats a bytes</a>
+    <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../21__fluxos_orientats_a_bytes/">2.1 - Fluxos orientats a bytes</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../211__mtodes_del_inputstream/">2.1.1 - Mètodes del InputStream</a>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">2.1.2 - Mètodes del OutputStream</a>
+    <ul class="current">
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >2.2 - Fluxos orientats a caràcters</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../22__fluxos_orientats_a_carcters/">2.2 - Fluxos orientats a caràcters</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../221__mtodes_del_reader/">2.2.1 - Mètodes del Reader</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../222__mtodes_del_writer/">2.2.2 - Mètodes del Writer</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >3 - Fluxos decoradors</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../3__fluxos_decoradors/">3 - Fluxos decoradors</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../31__decoradors_de_inputstream_i_otputstream/">3.1 - Decoradors de InputStream i OtputStream</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../32__decoradors_de_reader_i_writer/">3.2 - Decoradors de Reader i Writer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../33__conversors_inputstreamreader_i_outputstreamwriter/">3.3 - ConversorsInputStreamReader i OutputStreamWriter</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4__simplificaci_en_kotlin/">4 - Simplificació en Kotlin</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">AD - Accés a Dades</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Tema 2- Gestió del contingut de fitxers</li>
+          <li class="breadcrumb-item">2 - Manipulació dels fluxos de dades</li>
+          <li class="breadcrumb-item">2.1 - Fluxos orientats a bytes</li>
+      <li class="breadcrumb-item active">2.1.2 - Mètodes del OutputStream</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="212-metodes-del-outputstream">2.1.2 - Mètodes del OutputStream</h1>
+<p>Comencem també pel més senzill i primordial, el mètode que escriu un byte
+(recordeu que estem en fluxos orientats a bytes).</p>
+<ul>
+<li>void <strong>write(<em>byte</em> : Int) </strong>: escriu el byte passat com a paràmetre en el flux d'eixida. Encara que el paràmetre és de tipus int, només s'escriurà un byte. Si no es poguera fer l'escriptura per qualsevol motiu (per exemple, disc ple), es llançarà una excepció de tipus <strong>IOException</strong>.</li>
+</ul>
+<p>Igual que en l'apartat anterior, anem a veure un exemple senzill
+d'utilització, en què guardarem en un fitxer el contingut d'una cadena (encara
+que ja sabem que no és el més apropiat utilitzar fluxos orientats a bytes per
+a informació de caràcters).</p>
+<p>En aquest primer exemple del <strong>OutputStream</strong> treballarem sobre un fitxer
+inexistent. Es podrà comprovar que el resultat serà la creació del fitxer amb
+el contingut. Hem de fer constar que si no es tanca el fitxer (millor dit el
+flux d'eixida) podria ser que no es guardara res en el fitxer. Per tant
+<strong>tancar és una operació ben important que no hem d'oblidar</strong>.</p>
+<p>Copieu el següent codi en un fitxer anomenat <strong>Exemple_2_11.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.FileOutputStream
+
+fun main(args: Array&lt;String&gt;) {
+    val text = "Contingut per al fitxer."
+    val f_out = FileOutputStream("f3.txt")
+    for (c in text) 
+        f_out.write(c.toInt())
+    f_out.close()
+}
+</code></pre>
+<p>Observeu com hem convertit cada caràcter a <strong>Int</strong> per a que puga funcionar,
+ja que el mètode <strong>write()</strong> accepta un enter.</p>
+<p>En el constructor del OutputStream no hem indicat el segon paràmetre, aquell
+que indicava si era per a afegir o no, i per tant si no existia el fitxer el
+crearà, però si ja existia el fitxer, destruirà el seu contingut i el
+substituirà pel nou contingut. Per això si tornem a executar el programa,
+tindrem el mateix resultat.</p>
+<pre><code>Contingut per al fitxer.
+</code></pre>
+<p>La codificació del fitxer haurà segut la que tinga per defecte el Sistema
+Operatiu, que en el cas d'Ubuntu és UTF-8, i en el cas de Windows és ISO-8859.</p>
+<p>Anem a provar a substituir el constructor, posant ara</p>
+<pre><code>val f_out = FileOutputStream("f3.txt",true)
+</code></pre>
+<p>Si l'executem una altra vegada, veurem que afegirà al final, sense destruir el
+que ja hi havia.</p>
+<pre><code>Contingut per al fitxer.Contingut per al fitxer.
+</code></pre>
+<p>Altres mètodes del OutputStream són:</p>
+<ul>
+<li>void <strong>write(<em>buffer</em> : ByteArray)</strong> : escriu el contingut de l'array de bytes al fitxer. Cal que buffer no siga nul, o provocarem un error.</li>
+<li>void <strong>write(<em>buffer</em> : ByteArray, <em>pos</em> : Int, <em>llarg</em> : Int)</strong> : escriu al fitxer el contingut de l'array que està a partir de la posició <strong>pos</strong> i tants bytes com assenyale <strong>llarg</strong>.</li>
+<li>void <strong>flush()</strong> : Guardar les dades en un fitxer és una operació relativament lenta, ja que és accedir a un dispositiu lent (millor dit, no tan ràpid com la memòria). És habitual que s'utilitze una memòria intermèdia per a que les coses no vagen tan lentes (com si fóra una caché). Però potser que les dades no estiguen guardades encara en el fitxer, sinó que encara estiguen en aquesta caché. El mètode <strong>flush</strong> obliga a escriure els bytes que queden encara a la caché físicament al fitxer d'eixida.</li>
+<li>void <strong>close()</strong> : tanca el flux d'eixida, alliberant els recursos. Si quedava alguna cosa en la caché, es guardarà al fitxer i es tancarà el flux.</li>
+</ul>
+<p>En aquest exemple es copia el contingut del fitxer <strong>f2.txt</strong> en el fitxer
+<strong>f4.txt</strong> , però en compte d'anar byte a byte, anirem de 30 en 30, amb un
+buffer de 30 posicions. Podríem cometre l'error de la línia 13 del següent
+programa, la del comentari, d'escriure sempre els 30 caràcters. Copieu el
+següent codi en un fitxer anomenat <strong>Exemple_2_12.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.FileInputStream
+import java.io.FileOutputStream
+
+fun main(args: Array&lt;String&gt;) {
+    val f_in = FileInputStream("f2.txt")
+    val f_out = FileOutputStream("f4.txt")
+
+    var buffer = ByteArray(30)
+    var num = f_in.read(buffer)
+    while (num != -1) {
+        f_out.write(buffer)    // açò és un error
+        num = f_in.read(buffer)
+    }
+    f_in.close();
+    f_out.close();
+}
+</code></pre>
+<p>D'aquesta manera, l'última vegada que és llig és molt possible que no hi hagen
+exactament 30 caràcters. Si hi ha menys de 30 caràcters, només es llegiran els
+que queden al principi del buffer, i en la resta del buffer hi ha la
+informació anterior, la de la penúltima lectura. En definitiva, tenim
+"basura", i si no ho controlem el resultat no serà el correcte. Aquest ser`el
+contingut de <strong>f4.txt</strong> :</p>
+<pre><code>Hola. Aquest és un text més llarg, per veure com gestiona els bytes amb un
+buffer de 30 caràcters.  
+Com que ho llegim des d'un InputStream, els caràcters especials potser no
+isquen bé.  
+pecials potser no isq
+</code></pre>
+<p>Ha eixit d'aquesta manera perquè l'última vegada només s'han llegit 9 bytes.
+Els 21 restants tenen la informació encara de la penúltima lectura.</p>
+<p>Per a fer-lo de forma correcta, ens aprofitem de que <strong>read(buffer)</strong> torna el
+número de bytes realment llegits, per escriure exactament aquest número. Per
+tant substituirem la línia 13, la del comentari, per aquesta altra:</p>
+<pre><code>f_out.write(buffer,0,num)     // ara sí que funcionarà bé
+</code></pre>
+<p>Ara el contingut de <strong>f4.txt</strong> serà idèntic al de <strong>f2.txt</strong></p>
+<p><u><strong>Nota important</strong></u></p>
+<div style="background-color: #d6eaf8; color: black; padding: 5px;">
+Per a assegurar-nos que realment escrivim en el fitxer i no es queda res en la
+memòria intermèdia, <b>hem de tancar sempre els fluxos d'eixida</b>. Si ens
+oblidem de tancar-los, és molt fàcil que no s'acabe d'escriure físicament en
+el fitxer.
+</div>
+<p></p>
+
+<p>Llicenciat sota la  <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial
+CompartirIgual 2.5</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../211__mtodes_del_inputstream/" class="btn btn-neutral float-left" title="2.1.1 - Mètodes del InputStream"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../22__fluxos_orientats_a_carcters/" class="btn btn-neutral float-right" title="2.2 - Fluxos orientats a caràcters">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../211__mtodes_del_inputstream/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../22__fluxos_orientats_a_carcters/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

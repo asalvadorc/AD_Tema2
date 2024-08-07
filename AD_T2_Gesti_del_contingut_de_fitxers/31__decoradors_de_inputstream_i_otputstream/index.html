@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://asalvadorc.github.io/AD_Tema2/AD_T2_Gesti_del_contingut_de_fitxers/31__decoradors_de_inputstream_i_otputstream/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>3.1 - Decoradors de InputStream i OtputStream - AD - Accés a Dades</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "3.1 - Decoradors de InputStream i OtputStream";
+        var mkdocs_page_input_path = "AD_T2_Gesti_del_contingut_de_fitxers/31__decoradors_de_inputstream_i_otputstream.md";
+        var mkdocs_page_url = "/AD_Tema2/AD_T2_Gesti_del_contingut_de_fitxers/31__decoradors_de_inputstream_i_otputstream/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../assets/logocaminas.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Tema 2- Gestió del contingut de fitxers</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1__magatzems_i_fluxos_de_dades/">1 - Magatzems i fluxos de dades</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >2 - Manipulació dels fluxos de dades</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../2__manipulaci_dels_fluxos_de_dades/">2 - Manipulació dels fluxos de dades</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >2.1 - Fluxos orientats a bytes</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../21__fluxos_orientats_a_bytes/">2.1 - Fluxos orientats a bytes</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../211__mtodes_del_inputstream/">2.1.1 - Mètodes del InputStream</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../212__mtodes_del_outputstream/">2.1.2 - Mètodes del OutputStream</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >2.2 - Fluxos orientats a caràcters</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../22__fluxos_orientats_a_carcters/">2.2 - Fluxos orientats a caràcters</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../221__mtodes_del_reader/">2.2.1 - Mètodes del Reader</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../222__mtodes_del_writer/">2.2.2 - Mètodes del Writer</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >3 - Fluxos decoradors</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../3__fluxos_decoradors/">3 - Fluxos decoradors</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">3.1 - Decoradors de InputStream i OtputStream</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../32__decoradors_de_reader_i_writer/">3.2 - Decoradors de Reader i Writer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../33__conversors_inputstreamreader_i_outputstreamwriter/">3.3 - ConversorsInputStreamReader i OutputStreamWriter</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4__simplificaci_en_kotlin/">4 - Simplificació en Kotlin</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">AD - Accés a Dades</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Tema 2- Gestió del contingut de fitxers</li>
+          <li class="breadcrumb-item">3 - Fluxos decoradors</li>
+      <li class="breadcrumb-item active">3.1 - Decoradors de InputStream i OtputStream</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="31-decoradors-de-inputstream-i-otputstream">3.1 - Decoradors de InputStream i OtputStream</h1>
+<p>Com hem comentat ens serviran per a donar una funcionalitat extra. Són els que
+estan de verd en la següent imatge:</p>
+<p><img alt="T2_2_1.png" src="../T2_2_1.png" /></p>
+<p>Fixem-nos primers en els decoradors de <strong>InputStream</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Explicació</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FilterInputStream</strong></td>
+<td>No és instanciable, únicament està per a que les altres depenguen d'ella (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>LineNumberInputStream</strong></td>
+<td>Afegeix el número de línia de cada línia del InputStream (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>DataInputStream</strong></td>
+<td>Permet llegir dades de qualsevol tipus de dades: enter, real, booleà, ...</td>
+</tr>
+<tr>
+<td><strong>BufferedInputStream</strong></td>
+<td>Munta un buffer d'entrada (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>PushBackInputStream</strong></td>
+<td>Permet retrocedir un byte en la lectura, i per tant permet anar cap arrere (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>ObjectInputStream</strong></td>
+<td>Permet llegir tot un objecte</td>
+</tr>
+</tbody>
+</table>
+<p>I de forma quasi paral·lela tenim els decoradors de <strong>OutputStream</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Explicació</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FilterOutputStream</strong></td>
+<td>No és instanciable, únicament està per a que les altres depenguen d'ella (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>Data</strong>Out<strong> putStream</strong></td>
+<td>Permet guardar al flux de dades d'eixida dades de qualsevol tipus: enter, real, booleà, ...</td>
+</tr>
+<tr>
+<td><strong>Buffered</strong>Out<strong> putStream</strong></td>
+<td>Munta un buffer d'eixida (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>PrintStream</strong></td>
+<td>Permet escriure dades de diferents tipus, i té també els mètodes <em>printf</em> i <em>println</em></td>
+</tr>
+<tr>
+<td><strong>Object</strong>Out<strong> putStream</strong></td>
+<td>Permet escriure (serialitzar) tot un objecte</td>
+</tr>
+</tbody>
+</table>
+<p>Comentem-los un poquet més.</p>
+<p><strong>BufferedInputStream</strong> i <strong>BufferedOutputStream</strong> ens ofereixen un buffer
+d'entrada i d'eixida respectivament, per a fer la transferència més efectiva.
+En la pràctica ens oferirà poques funcionalitats útils (a banda de
+l'eficiència en la transferència, clar). Quan anem als decoradors de fluxos
+orientats a caràcters, sí que trobarem utilitats als decoradors semblants a
+aquestos, com per exemple llegir o escriure una línia sencera de caràcters.
+Però aquestos orientats a bytes, no els veurem.</p>
+<p><strong>DataInputStream</strong> i <strong>DataOutputStream</strong> ens oferiran la possibilitat de
+llegir o escriure còmodament dades de diferents tipus: enter, real, booleà,
+strings, ... Els veurem en detall en el proper <strong>Tema 3</strong></p>
+<p><strong>ObjectInputStream</strong> i <strong>ObjectOutputStream</strong> (que curiosament són els únics
+que no depenen de <strong>FilterInputStream</strong> i <strong>FilterOutputStream</strong>) ens
+permetran guardar o recuperar de cop tot un objecte, és a dir totes les seues
+propietats (les dades de l'objecte). No ens haurem de preocupar ni de l'ordre
+ni del tipus de les propietats de l'objecte: quan escrivim l'objecte, es
+guardaran totes les dades de forma compacta; i quan llegim es recuperaran de
+forma correcta. És per tant una parella de classes d'extrema utilitat per a
+guardar objectes, que en definitiva són l'essència de la programació en Java.
+Els veurem en detall en el proper <strong>Tema 3</strong>.</p>
+<p><code>PrintStream</code></p>
+<p>L'únic que ens queda és el que veurem ara amb un poquet més de detall, el
+<strong>PrintStream</strong>. Ens permetrà bàsicament 3 coses:</p>
+<ul>
+<li>Escriure dades de més d'un tipus de dades. Per exemple <strong>print(5.25)</strong> escriu un número real, i <strong>print("Hola")</strong> escriu tot un string.</li>
+<li>Donar un determinat format a l'eixida, amb tota la funcionalitat a què estem acostumats amb <strong>printf</strong></li>
+<li>Escriure tota una línia amb <strong>println</strong> , és a dir, acabar una dada amb el retorn de carro, per a baixar de línia.</li>
+</ul>
+<p>Mirem un exemple que ens pot donar idea de la seua funcionalitat. Copieu el
+següent codi en un fitxer anomenat <strong>Exemple_2_41.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.PrintStream
+import java.io.FileOutputStream
+
+fun main(args: Array&lt;String&gt;) {
+    val f_out = PrintStream(FileOutputStream ("f6.txt"))
+
+    val a = 5.25.toFloat()
+    val b = "Hola."
+    f_out.print(b)
+    f_out.println("Què tal?")
+    f_out.println(a + 3)
+    f_out.printf("El número %d en hexadecimal és %x", 27, 27)
+
+    f_out.close();
+}
+</code></pre>
+<p>Es crearà el fitxer <strong>f6.txt</strong> (si ja existia esborrarà el contingut anterior)
+amb el següent contingut:</p>
+<pre><code>Hola.Què tal?
+8.25
+El número 27 en hexadecimal és 1b
+</code></pre>
+<p>En realitat el <strong>PrintStream</strong> , a banda del constructor que accepta un
+<strong>OutputStream</strong> , també té un altre que accepta un <strong>File</strong> i fins i tot un
+altre que accepta un <strong>String</strong> amb el nom del fitxer. Per tant, la següent
+sentència també ens funcionaria:</p>
+<pre><code>    val f_out = PrintStream("f6.txt")
+</code></pre>
+<p>Llicenciat sota la  <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial
+CompartirIgual 2.5</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../3__fluxos_decoradors/" class="btn btn-neutral float-left" title="3 - Fluxos decoradors"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../32__decoradors_de_reader_i_writer/" class="btn btn-neutral float-right" title="3.2 - Decoradors de Reader i Writer">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../3__fluxos_decoradors/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../32__decoradors_de_reader_i_writer/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://asalvadorc.github.io/AD_Tema2/AD_T2_Gesti_del_contingut_de_fitxers/21__fluxos_orientats_a_bytes/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>2.1 - Fluxos orientats a bytes - AD - Accés a Dades</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "2.1 - Fluxos orientats a bytes";
+        var mkdocs_page_input_path = "AD_T2_Gesti_del_contingut_de_fitxers/21__fluxos_orientats_a_bytes.md";
+        var mkdocs_page_url = "/AD_Tema2/AD_T2_Gesti_del_contingut_de_fitxers/21__fluxos_orientats_a_bytes/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../assets/logocaminas.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Tema 2- Gestió del contingut de fitxers</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1__magatzems_i_fluxos_de_dades/">1 - Magatzems i fluxos de dades</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >2 - Manipulació dels fluxos de dades</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../2__manipulaci_dels_fluxos_de_dades/">2 - Manipulació dels fluxos de dades</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" >2.1 - Fluxos orientats a bytes</a>
+    <ul class="current">
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">2.1 - Fluxos orientats a bytes</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../211__mtodes_del_inputstream/">2.1.1 - Mètodes del InputStream</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../212__mtodes_del_outputstream/">2.1.2 - Mètodes del OutputStream</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >2.2 - Fluxos orientats a caràcters</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../22__fluxos_orientats_a_carcters/">2.2 - Fluxos orientats a caràcters</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../221__mtodes_del_reader/">2.2.1 - Mètodes del Reader</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../222__mtodes_del_writer/">2.2.2 - Mètodes del Writer</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >3 - Fluxos decoradors</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../3__fluxos_decoradors/">3 - Fluxos decoradors</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../31__decoradors_de_inputstream_i_otputstream/">3.1 - Decoradors de InputStream i OtputStream</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../32__decoradors_de_reader_i_writer/">3.2 - Decoradors de Reader i Writer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../33__conversors_inputstreamreader_i_outputstreamwriter/">3.3 - ConversorsInputStreamReader i OutputStreamWriter</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4__simplificaci_en_kotlin/">4 - Simplificació en Kotlin</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">AD - Accés a Dades</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Tema 2- Gestió del contingut de fitxers</li>
+          <li class="breadcrumb-item">2 - Manipulació dels fluxos de dades</li>
+          <li class="breadcrumb-item">2.1 - Fluxos orientats a bytes</li>
+      <li class="breadcrumb-item active">2.1 - Fluxos orientats a bytes</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="21-fluxos-orientats-a-bytes">2.1 - Fluxos orientats a bytes</h1>
+<p>L'arrel, la base de tota la jerarquia són <strong>InputStream</strong> i <strong>OutputStream</strong> ,
+respectivament per a fluxos d'entrada i d'eixida. Comentarem els fluxos
+d'entrada, i els d'eixida són totalment paral·lels.</p>
+<p>La super-classe <strong>InputStream</strong> servirà per a fer l'entrada des de qualsevol
+dispositiu: fitxer, array de bytes, una tuberia (per a dur dades des d'una
+altra aplicació)... Totes les classes d'entrada heretaran d'ella, i serviran
+per especificar exactament d'on (per exemple un fitxer: <strong>FileInputStream</strong>) o
+per a donar alguna altra funcionalitat, com anirem veient a poc a poc.
+D'aquesta manera, els mètodes que es defineixen s'hauran d'implementar per les
+classes que hereten de la super-classe i assegura una uniformitat, siga quina
+siga la font.</p>
+<p>Fem una ullada ràpida a la jerarquia de classes en la següent imatge:</p>
+<p><img alt="Jerarquia InputStream" src="../T2_2_1.png" /></p>
+<p>De moment mirem únicament les que estan en color <strong>taronja</strong> , que
+especificaran quina serà la font de dades:</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Explicació</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FileInputStream</strong></td>
+<td>Per a llegir informació d'un fitxer</td>
+</tr>
+<tr>
+<td><strong>PipedInputStream</strong></td>
+<td>Per a llegir des d'una tuberia (és a dir informació que ve d'un altre programa)</td>
+</tr>
+<tr>
+<td><strong>ByteArrayInputStream</strong></td>
+<td>L'entrada serà un array de bytes</td>
+</tr>
+<tr>
+<td><strong>SequenceInputStream</strong></td>
+<td>Servirà per enllaçar dues entrades en una de sola, seqüencialment</td>
+</tr>
+</tbody>
+</table>
+<p>Evidentment ens centrarem en la primera, que és la que més ens interessa per a
+la permanència de les dades, però posarem algun exemple de les altres
+(concretament <strong>ByteArrayInputStream</strong>).</p>
+<p>Els fluxos d'eixida són molt molt pareguts, tots ells heretaran de
+<strong>OutputStream</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Explicació</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FileOutputStream</strong></td>
+<td>Per a guardar informació en un fitxer</td>
+</tr>
+<tr>
+<td><strong>PipedOutputStream</strong></td>
+<td>Per a traure cap a una tuberia (és a dir informació que anirà a un altre programa)</td>
+</tr>
+<tr>
+<td><strong>ByteArrayOutputStream</strong></td>
+<td>L'eixida serà un array de bytes</td>
+</tr>
+</tbody>
+</table>
+<p><code>Constructors de FileInputStream</code></p>
+<p>Com hem comentat, qui més ens interessa de tots els InputStream és el
+<strong>FileInpuStream</strong> , per a poder accedir a la informació d'un fitxer. Dos són
+els constructors de FileInputStream:</p>
+<ul>
+<li><strong>FileInputStream (<em>f</em> : File)</strong>: en el paràmetre se li passa un File (dels vistos en el tema anterior), que ha de ser una referència al fitxer.</li>
+<li><strong>FileInputStream (<em>nom_f</em> : String)</strong>: en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer. Ens permetrà fer referència al fitxer de forma més ràpida, sense haver de passar per un File.</li>
+</ul>
+<p><code>Constructors del FileOutputStream</code></p>
+<p>Canviaran lleugerament respecte als d'entrada, ja que a més de fer referència
+al fitxer, opcionalment podrem d'especificar la manera d'escriure en el fitxer
+en cas que aquest ja existesca: bé afegint al final, o bé destruint la
+informació anterior. Aquestos són els constructors:</p>
+<ul>
+<li><strong>FileOutputStream (<em>f</em> : File)</strong>: en el paràmetre se li passa un File. Si no existia, el crearà; si ja existia esborrarà el contingut. En ambdós casos l'obrirà en mode escriptura.</li>
+<li><strong>FileOutputStream (<em>nom_f</em> : String)</strong>: igual que en l'anterior, però en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer.</li>
+<li><strong>FileOutputStream (<em>f</em> : File, </strong><em><strong>afegir</strong></em><strong>: Boolean)</strong> : és com el primer, però si en el segon paràmetre se li passa <strong>true</strong> , en cas que ja existira el fitxer, la informació s'afegirà al final, en compte de substituir el que ja hi havia. Si en aquest paràmetre se li passa <strong>false</strong> s'esborrarà el contingut anterior (com en el primer cas).</li>
+<li><strong>FileOutputStream (<em>nom_f</em> : String</strong>,<strong>__</strong>afegir<strong>__</strong><strong>: Boolean)</strong> : igual que en l'anterior, però en el primer paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer.</li>
+</ul>
+<p>Llicenciat sota la  <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial
+CompartirIgual 2.5</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../2__manipulaci_dels_fluxos_de_dades/" class="btn btn-neutral float-left" title="2 - Manipulació dels fluxos de dades"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../211__mtodes_del_inputstream/" class="btn btn-neutral float-right" title="2.1.1 - Mètodes del InputStream">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../2__manipulaci_dels_fluxos_de_dades/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../211__mtodes_del_inputstream/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

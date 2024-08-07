@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://asalvadorc.github.io/AD_Tema2/AD_T2_Gesti_del_contingut_de_fitxers/32__decoradors_de_reader_i_writer/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>3.2 - Decoradors de Reader i Writer - AD - Accés a Dades</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "3.2 - Decoradors de Reader i Writer";
+        var mkdocs_page_input_path = "AD_T2_Gesti_del_contingut_de_fitxers/32__decoradors_de_reader_i_writer.md";
+        var mkdocs_page_url = "/AD_Tema2/AD_T2_Gesti_del_contingut_de_fitxers/32__decoradors_de_reader_i_writer/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../assets/logocaminas.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Tema 2- Gestió del contingut de fitxers</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../objectius/">Objectius</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1__magatzems_i_fluxos_de_dades/">1 - Magatzems i fluxos de dades</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >2 - Manipulació dels fluxos de dades</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../2__manipulaci_dels_fluxos_de_dades/">2 - Manipulació dels fluxos de dades</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >2.1 - Fluxos orientats a bytes</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../21__fluxos_orientats_a_bytes/">2.1 - Fluxos orientats a bytes</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../211__mtodes_del_inputstream/">2.1.1 - Mètodes del InputStream</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../212__mtodes_del_outputstream/">2.1.2 - Mètodes del OutputStream</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >2.2 - Fluxos orientats a caràcters</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../22__fluxos_orientats_a_carcters/">2.2 - Fluxos orientats a caràcters</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../221__mtodes_del_reader/">2.2.1 - Mètodes del Reader</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../222__mtodes_del_writer/">2.2.2 - Mètodes del Writer</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >3 - Fluxos decoradors</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../3__fluxos_decoradors/">3 - Fluxos decoradors</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../31__decoradors_de_inputstream_i_otputstream/">3.1 - Decoradors de InputStream i OtputStream</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">3.2 - Decoradors de Reader i Writer</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../33__conversors_inputstreamreader_i_outputstreamwriter/">3.3 - ConversorsInputStreamReader i OutputStreamWriter</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4__simplificaci_en_kotlin/">4 - Simplificació en Kotlin</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../exercicis/">Exercicis</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">AD - Accés a Dades</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Tema 2- Gestió del contingut de fitxers</li>
+          <li class="breadcrumb-item">3 - Fluxos decoradors</li>
+      <li class="breadcrumb-item active">3.2 - Decoradors de Reader i Writer</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="32-decoradors-de-reader-i-writer">3.2 - Decoradors de Reader i Writer</h1>
+<p>Mirem ara els decoradors de la jerarquia <strong>Reader</strong> i <strong>Writer</strong> . Tornen a
+ser els de color verd. Els de color gris <strong>InputStreamReader</strong> i
+<strong>OutputStreamWriter</strong> són conversors que permeten passar un <strong>InputStream</strong> a
+un <strong>Reader</strong> i un <strong>OutputStream</strong> a <strong>Writer</strong>. Els veurem en la següent
+pregunta.</p>
+<p><img alt="T2_2_2.png" src="../T2__2_2.png" /></p>
+<p>Fixem-nos primers en els decoradors de <strong>Reader</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Explicació</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FilterReader</strong></td>
+<td>No és instanciable, únicament està per a que les altres depenguen d'ella (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>PushBackInputStream</strong></td>
+<td>Permet retrocedir un caràcter en la lectura, i per tant permet anar cap arrere (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>Buffered</strong>Reader****</td>
+<td>Munta un buffer d'entrada, i permet entre altres coses llegir una línia sencera</td>
+</tr>
+<tr>
+<td><strong>LineNumber</strong>Reader****</td>
+<td>Afegeix el número de línia de cada línia del fitxer (no la veurem)</td>
+</tr>
+</tbody>
+</table>
+<p>I de forma quasi paral·lela tenim els decoradors de <strong>Writer</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Explicació</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FilterWriter</strong></td>
+<td>No és instanciable, únicament està per a que les altres depenguen d'ella (no la veurem)</td>
+</tr>
+<tr>
+<td><strong>Buffered</strong>Writer****</td>
+<td>Munta un buffer d'eixida, i permet entre altres coses escriure una línia sencera</td>
+</tr>
+<tr>
+<td><strong>Print</strong>Writer****</td>
+<td>Permet escriure dades de diferents tipus, i té també els mètodes <em>printf</em> i <em>println</em></td>
+</tr>
+</tbody>
+</table>
+<p>El <strong>PrintWriter</strong> funciona quasi exactament igual que el <strong>PrintStream</strong> , i
+per a caràcters és més útil que l'altre (per ser <strong>Writer</strong>), per tant és el
+candidat a recordar.</p>
+<p>El <strong>BufferedReader</strong> sí que ens oferirà facilitats interessants, com llegir
+una línia sencera. En canvi el <strong>BufferedWriter</strong> no ens ofereix tantes
+facilitats com el <strong>PrintWriter</strong> , és un poc més incòmode.</p>
+<p><code>BufferedReader i BufferedWriter. PrintWriter</code></p>
+<p>BufferedReader i BufferedWriter munten un buffer (d'entrada i d'eixida
+respectivament) de caràcters per a fer més eficient la transferència. A banda
+d'això tindran uns mètodes que ens seran molt útils.</p>
+<p><u><strong>BufferedReader</strong></u></p>
+<ul>
+<li>mètode <strong>readLine()</strong> que ens permet llegir una línia sencera del fitxer (fins al final de línia). Açò és de molta utilitat en els fitxers de text.</li>
+</ul>
+<p><u><strong>BufferedWriter</strong></u></p>
+<ul>
+<li>mètode <strong>newLine()</strong> que permet introduir el caràcter de baixada de línia</li>
+<li>mètode <strong>write(<em>cad</em> : String, <em>com</em> : Int, <em>llarg</em> : Int)</strong> que permet escriure tot un string, o una part d'ell, especificant on comença el que volem escriure i la llargària</li>
+</ul>
+<p>Com veieu el <strong>BufferedReader</strong> sí que ens ofereix la possibilitat de llegir
+una línia sencera, però en canvi el <strong>BufferedWriter</strong> es queda un poc curt.
+Per això preferirem el <strong>PrintWriter</strong>.</p>
+<p><u><strong>PrintWriter</strong></u></p>
+<ul>
+<li>mètodes <strong>print(<em>qualsevol_tipu</em> <em>s</em>)</strong> , que permeten imprimir una dada de qualsevol tipus: booleà, char, tots els numèrics, string, ... Serà segurament el que més utilitzarem.</li>
+<li>mètodes <strong>println</strong>(<em>qualsevol_tipu</em> <em>s</em>)<strong><em>* , a banda de tot el de </em>*print</strong> , baixen de línia</li>
+<li>mètode <strong>printf()</strong> , que permet donar un format</li>
+</ul>
+<p>Veiem un senzill exemple per a copiar el contingut d'un fitxer de text i
+modificar-lo lleugerament. El més còmode serà anar línia a línia. Per tant
+utilitzarem el <strong>BufferedReader</strong> per a llegir línies, i el <strong>PrintWriter</strong>
+per a escriure línies. La lleugera modificació consistirà en posar el número
+de línia davant. Copieu el següent codi en un fitxer anomenat
+<strong>Exemple_2_51.kt</strong> :</p>
+<pre><code>package exemples
+
+import java.io.BufferedReader
+import java.io.FileReader
+import java.io.PrintWriter
+import java.io.FileWriter
+
+fun main(args: Array&lt;String&gt;) {
+    val f_ent = BufferedReader(FileReader ("f7_ent.txt"))
+    val f_eix = PrintWriter(FileWriter ("f7_eix.txt"))
+    var cad = f_ent.readLine();
+    var i = 0
+    while (cad != null) {
+        i++
+        f_eix.println("" + i + ".- " + cad)
+        cad = f_ent.readLine()
+    }
+    f_eix.close()
+    f_ent.close()
+}
+</code></pre>
+<p>Si en el fitxer d'entrada (<strong>f7_ent.txt</strong>) tenim guardada la següent
+informació (introduïda amb el notepad o gedit):</p>
+<pre><code>Primera
+Segona
+Tercera
+</code></pre>
+<p>En el fitxer d'eixida (<strong>f7_eix.txt</strong>) tindrem:</p>
+<pre><code>1.- Primera
+2.- Segona
+3.- Tercera
+</code></pre>
+<p>Llicenciat sota la  <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Llicència Creative Commons Reconeixement NoComercial
+CompartirIgual 2.5</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../31__decoradors_de_inputstream_i_otputstream/" class="btn btn-neutral float-left" title="3.1 - Decoradors de InputStream i OtputStream"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../33__conversors_inputstreamreader_i_outputstreamwriter/" class="btn btn-neutral float-right" title="3.3 - ConversorsInputStreamReader i OutputStreamWriter">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../31__decoradors_de_inputstream_i_otputstream/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../33__conversors_inputstreamreader_i_outputstreamwriter/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
