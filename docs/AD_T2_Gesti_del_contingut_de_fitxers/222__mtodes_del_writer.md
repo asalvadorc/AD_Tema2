@@ -13,12 +13,14 @@ inexistent. Es podrà comprovar que el resultat serà la creació del fitxer amb
 el contingut. Copieu el següent codi en un fitxer anomenat **Exemple_2_31.kt**
 :
 
-**Nota**
+<u>**Nota**</u>
 
+<div style="background-color: #d6eaf8; color: black; padding: 5px;">
 Hem de fer constar que si no es tanca el fitxer (millor dit el flux d'eixida)
 podria ser que no es guardara res en el fitxer. Per tant és una operació ben
 important que no hem d'oblidar.
-
+</div>
+<p></p>
     
     
     package exemples
@@ -42,9 +44,9 @@ indicava si era per a afegir o no, i per tant si no existia el fitxer el
 crearà, però si ja existia el fitxer, destruirà el seu contingut i el
 substituirà pel nou contingut. Per això si tornem a executar el programa,
 tindrem el mateix resultat en **f5.txt**
-
+~~~
 Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú, ...
-
+~~~
 Anem a provar a substituir el constructor, posant ara
 
     
@@ -52,11 +54,9 @@ Anem a provar a substituir el constructor, posant ara
     val f_out = FileWriter ("f5.txt", true)
 
 Si l'executem, veurem que afegirà al final, sense destruir el que ja hi havia.
-
-Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú,
-...Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú,
-...
-
+~~~
+Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú, ...Contingut per al fitxer. Ara ja sense por a caràcters especials: ç, à, ú, ...
+~~~
 Altres mètodes del **Writer** són:
 
   * void **write(_buffer_ : CharArray)** : escriu el contingut de l'array de caràcters al fitxer. Cal que buffer no siga nul, o provocarem un error.

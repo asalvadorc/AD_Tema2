@@ -8,7 +8,7 @@ Tanmateix, Kotlin proporcionarà funcionalitat extra en les classes, que ens
 permetrà simplificar prou els programes. Són molts els mètodes nous que ens
 proporcionarà. Ací tenim uns quants agrupats per temàtica.
 
-Mètodes sobre bytes
+```Mètodes sobre bytes```
 
   * **readBytes()** : torna un **ByteArray** amb tots els bytes del fitxer, és a dir, tot el seu contingut en forma de bytes
   * **writeBytes(_array_ : ByteArray)** : escriu en el fitxer el contingut del ByteArray. Si el fitxer ja existia, el sobreescriura.
@@ -50,7 +50,7 @@ caràcters com a dades, i no seria el més correcte utilitzar bytes ni de
 lectura ni d'escriptura. Ho hem fet únicament per comoditat.  
   
 
-Mètodes sobre caràcters
+```Mètodes sobre caràcters```
 
   * **readText(_charset_ : CharSet)**: torna un String amb la tots els caràcters del fitxer. Opcionalment li podem dir el joc de caràcters (si no li ho diem utilitzarà UTF-8)
   * **readLines(_charset_ : CharSet)**: torna un List de Strings amb totes les línies del fitxer
@@ -101,7 +101,7 @@ caràcters, farem una altra versió del Exemple_2_61.kt. Copieu el següent com
     	File("f5_2.txt").writeText(File("f5.txt").readText(), Charsets.ISO_8859_1)
     }
 
-Mètodes de conversió
+```Mètodes de conversió```
 
 En ocasions és possible que no tinguem un mètode directament en File que ens
 vinga bé. Un exemple són els mètodes print (print, println, printf).
@@ -140,7 +140,7 @@ PrintWriter que volíem. Copieu el següent com **Exemple_2_41_bis.kt** :
     	f_out.close();
     }
 
-Altres mètodes
+```Altres mètodes```
 
 Hi ha altres mètodes que poden ser molt útils. Per exemple aquell que copia
 directament un fitxer, o tot un directori recursivament, o que esborra

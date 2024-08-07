@@ -40,7 +40,7 @@ Classe | Explicació
 **PipedOutputStream** | Per a traure cap a una tuberia (és a dir informació que anirà a un altre programa)   
 **ByteArrayOutputStream** | L'eixida serà un array de bytes   
   
-Constructors de FileInputStream
+```Constructors de FileInputStream```
 
 Com hem comentat, qui més ens interessa de tots els InputStream és el
 **FileInpuStream** , per a poder accedir a la informació d'un fitxer. Dos són
@@ -49,7 +49,7 @@ els constructors de FileInputStream:
   * **FileInputStream (_f_ : File)**: en el paràmetre se li passa un File (dels vistos en el tema anterior), que ha de ser una referència al fitxer.
   * **FileInputStream (_nom_f_ : String)**: en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer. Ens permetrà fer referència al fitxer de forma més ràpida, sense haver de passar per un File.
 
-Constructors del FileOutputStream
+```Constructors del FileOutputStream```
 
 Canviaran lleugerament respecte als d'entrada, ja que a més de fer referència
 al fitxer, opcionalment podrem d'especificar la manera d'escriure en el fitxer

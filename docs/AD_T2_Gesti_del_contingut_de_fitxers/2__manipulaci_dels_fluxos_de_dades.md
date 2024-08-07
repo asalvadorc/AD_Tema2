@@ -7,7 +7,7 @@ de fluxos, i són moltes classes a recordar i utilitzar. Per contra fa que siga
 molt versàtil. En l'últim punt del tema veurem la simplificació que ens
 proposa Kotlin.
 
-Aquestes classes es trobaran en dues jerarquies, la dels**fluxos orientats a
+Aquestes classes es trobaran en dues jerarquies, la dels **fluxos orientats a
 bytes** i la dels **fluxos orientats a caràcters**.
 
   * Si les nostres dades són numèriques o de qualsevol altre tipus que puguem imaginar (imatges per exemple), ens convindran les primeres.

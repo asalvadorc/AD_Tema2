@@ -1,7 +1,8 @@
 # 2.1.1 - Mètodes del InputStream
 
-**Nota**
+<u>**Nota**</u>
 
+<div style="background-color: #d6eaf8; color: black; padding: 5px;">
 Per a fer els primers exemples, i únicament per comoditat, utilitzarem fitxers
 de text, encara que estiguem en fluxos orientats a byte. Açò no és l'adequat,
 ja que per a fitxers de text hauríem d'utilitzar fluxos orientats a caràcter.
@@ -9,7 +10,8 @@ Però com dic és per comoditat, perquè serà molt fàcil crear fitxers des de
 qualsevol editor de textos, i que després utilitzarem des de Java o Kotlin.
 L'inconvenient serà que no tots els caràcters eixiran de forma correcta,
 justament per utilitzar els fluxos de dades orientats a byte.
-
+</div>
+<p></p>
 El primer mètode que hem de veure del **InputStream** és aquell que ens permet
 una lectura senzilla:
 
@@ -20,9 +22,9 @@ un fitxer anomenat **f1.txt** , que pot ser un fitxer de text creat amb
 qualsevol editor senzillet, com per exemple **gedit** o el **Bloc de notes**.
 Ha d'estar en el directori del projecte (el projecte **Tema2**), i així no
 caldrà posar la ruta. Per exemple podríem posar el següent contingut:
-
+~~~
 Hola, què tal?
-
+~~~
 El que farà el programa és traure per pantalla caràcter a caràcter (en línies
 diferents). L'heu de copiar en un fitxer anomenat **Exemple_2_01.kt** dins
 d'un paquet anomenat **exemples** en el projecte del Tema 2:
@@ -44,7 +46,7 @@ d'un paquet anomenat **exemples** en el projecte del Tema 2:
     }
 
 El resultat en Ubuntu serà aquest:
-
+~~~
 H  
 o  
 l  
@@ -60,7 +62,7 @@ t
 a  
 l  
 ?  
-  
+~~~  
 
 Potser en Windows si que apareguen bé tots els caràcters, ja que utilitza per
 defecte una altra codificació. Però no li donarem ara importància al fet que
@@ -180,7 +182,7 @@ Com que ho llegim des d'un InputStream, els caràcters especials potser no
 isquen bé.
 
 Aquesta seria l'eixida:
-
+~~~
 Hola. Aquest ￃﾩs un text mￃﾩs  
 llarg, per veure com gestiona  
 els bytes amb un buffer de 30  
@@ -189,7 +191,7 @@ Com que ho llegim
 des d'un InputStream, els carￃ  
 ﾠcters especials potser no isq  
 uen bￃﾩ.
-
+~~~
 Recordeu que estem llegint un fitxer de text des d'un InputStream, cosa gens
 convenient ja que els caràcters com ç, ñ, o vocals accentuades difícilment
 podrem fer que apareguen bé. Ho arreglarem amb els fluxos orientats a

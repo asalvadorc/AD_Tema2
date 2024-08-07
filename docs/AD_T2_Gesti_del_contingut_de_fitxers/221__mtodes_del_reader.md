@@ -34,7 +34,7 @@ anomenat **Exemple_2_21.kt** :
 Ara segurament sí que haurà llegit bé tots els caràcters, incloent ñ, ç,
 vocals accentuades, etc. Si encara tenim el mateix contingut en **f1.txt** ,
 el resultat serà ara:
-
+~~~
 H  
 o  
 l  
@@ -49,7 +49,7 @@ t
 a  
 l  
 ?  
-  
+~~~  
 
 El més normal és que en crear el fitxer **f1.txt** amb algun editor, el
 guardem amb la codificació per defecte, que en cas de Windows és ASCII (o
@@ -120,7 +120,7 @@ suposat que en el fitxer **f2.txt** tenim un text prou llarg com per a veure
 el funcionament.
 
 Aquesta seria l'eixida:
-
+~~~
 Hola. Aquest és un text més ll  
 arg, per veure com gestiona el  
 s bytes amb un buffer de 30 ca  
@@ -129,7 +129,7 @@ Com que ho llegim des
 d'un InputStream, els caràcte  
 rs especials potser no isquen  
 bé.
-
+~~~
 Efectivament, s'han llegit tots els caràcters perfectament.
 
 

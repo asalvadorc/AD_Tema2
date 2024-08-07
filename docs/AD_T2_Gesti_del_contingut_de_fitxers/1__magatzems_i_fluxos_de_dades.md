@@ -31,6 +31,9 @@ seqüencial d’una sèrie de dades des de l’aplicació al dispositiu
 d’emmagatzematge o a l’inrevés. Ens dóna una visió eminentment dinàmica de la
 informació.
 
+
+![streams.png](flujos.png)
+
 Java utilitza els **streams** (fluxos de dades) per a poder accedir a la
 informació. Però els _streams_ no limiten la transferència de dades d'un
 fitxer, sinó que es generalitza per a qualsevol font de dades: memòria, xarxa,
@@ -41,7 +44,7 @@ estarem accedint a les dades proporcionades per un altre programa. Intentarem
 veure exemples d'accés a diferents fonts a través d'un stream, però ho
 aplicarem sobretot a l'accés a fitxers, clar.
 
-Fluxos d'entrada i d'eixida
+```Fluxos d'entrada i d'eixida```
 
 La primera diferenciació que farem en els fluxos de dades és si són d'entrada
 o d'eixida:
@@ -49,7 +52,7 @@ o d'eixida:
   * **Fluxos d'entrada** són aquells que serviran per introduir dades des de l'exterior al programa, és a dir a la zona de memòria controlada pel programa (variables, ...)
   * **Fluxos d'eixida** són aquells que serviran per a guardar les dades des de les variables del programa fins a l'exterior, per exemple un fitxer, per a que es guarden de forma permanent.
 
-Fluxos i tipus de dades
+```Fluxos i tipus de dades```
 
 Per mig del stream aconseguirem que una dada es guarde en un fitxer, o millor
 dit una sèrie de dades. Quan guardem moltes dades, es compactaran unes al

@@ -33,17 +33,17 @@ El **BufferedReader** sí que ens oferirà facilitats interessants, com llegir
 una línia sencera. En canvi el **BufferedWriter** no ens ofereix tantes
 facilitats com el **PrintWriter** , és un poc més incòmode.
 
-BufferedReader i BufferedWriter. PrintWriter
+```BufferedReader i BufferedWriter. PrintWriter```
 
 BufferedReader i BufferedWriter munten un buffer (d'entrada i d'eixida
 respectivament) de caràcters per a fer més eficient la transferència. A banda
 d'això tindran uns mètodes que ens seran molt útils.
 
-**BufferedReader**
+<u>**BufferedReader**</u>
 
   * mètode **readLine()** que ens permet llegir una línia sencera del fitxer (fins al final de línia). Açò és de molta utilitat en els fitxers de text.
 
-**BufferedWriter**
+<u>**BufferedWriter**</u>
 
   * mètode **newLine()** que permet introduir el caràcter de baixada de línia
   * mètode **write(_cad_ : String, _com_ : Int, _llarg_ : Int)** que permet escriure tot un string, o una part d'ell, especificant on comença el que volem escriure i la llargària
@@ -52,7 +52,7 @@ Com veieu el **BufferedReader** sí que ens ofereix la possibilitat de llegir
 una línia sencera, però en canvi el **BufferedWriter** es queda un poc curt.
 Per això preferirem el **PrintWriter**.
 
-**PrintWriter**
+<u>**PrintWriter**</u>
 
   * mètodes **print(_qualsevol_tipu_ _s_)** , que permeten imprimir una dada de qualsevol tipus: booleà, char, tots els numèrics, string, ... Serà segurament el que més utilitzarem.
   * mètodes **println**(_qualsevol_tipu_ _s_)**** , a banda de tot el de **print** , baixen de línia
@@ -90,21 +90,17 @@ de línia davant. Copieu el següent codi en un fitxer anomenat
 
 Si en el fitxer d'entrada (**f7_ent.txt**) tenim guardada la següent
 informació (introduïda amb el notepad o gedit):
-
+~~~
 Primera
-
 Segona
-
 Tercera
-
+~~~
 En el fitxer d'eixida (**f7_eix.txt**) tindrem:
-
+~~~
 1.- Primera
-
 2.- Segona
-
 3.- Tercera
-
+~~~
 
 Llicenciat sota la  [Llicència Creative Commons Reconeixement NoComercial
 CompartirIgual 2.5](http://creativecommons.org/licenses/by-nc-sa/2.5/)

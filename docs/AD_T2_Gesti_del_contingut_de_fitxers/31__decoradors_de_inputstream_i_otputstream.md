@@ -50,7 +50,7 @@ forma correcta. És per tant una parella de classes d'extrema utilitat per a
 guardar objectes, que en definitiva són l'essència de la programació en Java.
 Els veurem en detall en el proper **Tema 3**.
 
-PrintStream
+```PrintStream```
 
 L'únic que ens queda és el que veurem ara amb un poquet més de detall, el
 **PrintStream**. Ens permetrà bàsicament 3 coses:
@@ -84,13 +84,11 @@ següent codi en un fitxer anomenat **Exemple_2_41.kt** :
 
 Es crearà el fitxer **f6.txt** (si ja existia esborrarà el contingut anterior)
 amb el següent contingut:
-
+~~~
 Hola.Què tal?
-
 8.25
-
 El número 27 en hexadecimal és 1b
-
+~~~
 En realitat el **PrintStream** , a banda del constructor que accepta un
 **OutputStream** , també té un altre que accepta un **File** i fins i tot un
 altre que accepta un **String** amb el nom del fitxer. Per tant, la següent

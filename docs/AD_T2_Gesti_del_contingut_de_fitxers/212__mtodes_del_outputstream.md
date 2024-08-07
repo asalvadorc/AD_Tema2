@@ -40,9 +40,9 @@ que indicava si era per a afegir o no, i per tant si no existia el fitxer el
 crearà, però si ja existia el fitxer, destruirà el seu contingut i el
 substituirà pel nou contingut. Per això si tornem a executar el programa,
 tindrem el mateix resultat.
-
+~~~
 Contingut per al fitxer.
-
+~~~
 La codificació del fitxer haurà segut la que tinga per defecte el Sistema
 Operatiu, que en el cas d'Ubuntu és UTF-8, i en el cas de Windows és ISO-8859.
 
@@ -54,9 +54,9 @@ Anem a provar a substituir el constructor, posant ara
 
 Si l'executem una altra vegada, veurem que afegirà al final, sense destruir el
 que ja hi havia.
-
+~~~
 Contingut per al fitxer.Contingut per al fitxer.
-
+~~~
 Altres mètodes del OutputStream són:
 
   * void **write(_buffer_ : ByteArray)** : escriu el contingut de l'array de bytes al fitxer. Cal que buffer no siga nul, o provocarem un error.
@@ -97,13 +97,13 @@ que queden al principi del buffer, i en la resta del buffer hi ha la
 informació anterior, la de la penúltima lectura. En definitiva, tenim
 "basura", i si no ho controlem el resultat no serà el correcte. Aquest ser`el
 contingut de **f4.txt** :
-
+~~~
 Hola. Aquest és un text més llarg, per veure com gestiona els bytes amb un
 buffer de 30 caràcters.  
 Com que ho llegim des d'un InputStream, els caràcters especials potser no
 isquen bé.  
 pecials potser no isq
-
+~~~
 Ha eixit d'aquesta manera perquè l'última vegada només s'han llegit 9 bytes.
 Els 21 restants tenen la informació encara de la penúltima lectura.
 
@@ -115,15 +115,17 @@ tant substituirem la línia 13, la del comentari, per aquesta altra:
     
     f_out.write(buffer,0,num)     // ara sí que funcionarà bé
 
-Ara el contingut de**f4.txt** serà idèntic al de**f2.txt**
+Ara el contingut de **f4.txt** serà idèntic al de **f2.txt**
 
-**Nota important**
+<u>**Nota important**</u>
 
+<div style="background-color: #d6eaf8; color: black; padding: 5px;">
 Per a assegurar-nos que realment escrivim en el fitxer i no es queda res en la
-memòria intermèdia, **hem de tancar sempre els fluxos d'eixida**. Si ens
+memòria intermèdia, <b>hem de tancar sempre els fluxos d'eixida</b>. Si ens
 oblidem de tancar-los, és molt fàcil que no s'acabe d'escriure físicament en
 el fitxer.
-
+</div>
+<p></p>
 
 
 Llicenciat sota la  [Llicència Creative Commons Reconeixement NoComercial

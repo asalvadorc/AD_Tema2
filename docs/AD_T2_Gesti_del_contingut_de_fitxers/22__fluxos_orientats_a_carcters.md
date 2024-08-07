@@ -66,7 +66,7 @@ però si corre sobre Linux, la codificació serà UTF-8. De tota manera veurem
 que sí que podrem arribar a especificar quin és el joc de caràcters que volem
 utilitzar en la pregunta 3.3. Intentarem veure exemples de tot.
 
-Constructors de FileReader
+```Constructors de FileReader```
 
 De forma totalment paral·lela als fluxos orientats a byte, el **FileReader**
 té dos constructors, acceptant com a paràmetre un File o un String (amb el nom
@@ -76,7 +76,7 @@ caràcter (en compte d'un byte):
   * **FileReader (_f_ : File)**: en el paràmetre se li passa un File (dels vistos en el tema anterior), que ha de ser una referència al fitxer.
   * **FileReader (_nom_f_ : String)**: en el paràmetre se li passa un String amb el nom (i la possible ruta) del fitxer. Ens permetrà fer referència al fitxer de forma més ràpida, sense haver de passar per un File.
 
-Constructors del FileWriter
+```Constructors del FileWriter```
 
 També totalment paral·lel al FileOutputStream. Canviaran lleugerament respecte
 als d'entrada, ja que a més de fer referència al fitxer, opcionalment podrem
