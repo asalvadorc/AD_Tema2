@@ -21,13 +21,16 @@ classes e Java per a poder dominar l'accés a fitxers també en Kotlin.
 El següent tema serà una continuació d'aquest, veient formats especials de
 fitxers i també diferents maneres d'accedir.
 
-**Nota**
+<u>**Nota**</u>
+
+<div style="background-color: #d6eaf8; color: black; padding: 5px;">
 
 Per als exemples i exercicis d'aquest tema, heu de crear un projecte nou,
-**Tema2**.
+<b>Tema2</b>.
 
-Haureu de crear 2 paquets, **exemples** i **exercicis** , de forma similar a
-com havíem fet en el Tema 1.
+Haureu de crear 2 paquets, <b>exemples</b> i <b>exercicis</b> , de forma similar a com havíem fet en el Tema 1.
+</div>
+<p></p>
 
 
 Llicenciat sota la  [Llicència Creative Commons Reconeixement NoComercial
